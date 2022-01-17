@@ -1,0 +1,993 @@
+* 
+* ==> Audit <==
+* |---------|-------------------------|----------|------|---------|-------------------------------|-------------------------------|
+| Command |          Args           | Profile  | User | Version |          Start Time           |           End Time            |
+|---------|-------------------------|----------|------|---------|-------------------------------|-------------------------------|
+| start   | --vm-driver=none        | minikube | root |         | Wed, 24 Feb 2021 16:47:28 IST | Wed, 24 Feb 2021 16:51:11 IST |
+| ip      |                         | minikube | root |         | Wed, 24 Feb 2021 17:01:41 IST | Wed, 24 Feb 2021 17:01:42 IST |
+| ip      |                         | minikube | root |         | Mon, 08 Mar 2021 12:21:44 IST | Mon, 08 Mar 2021 12:21:44 IST |
+| ip      |                         | minikube | root |         | Mon, 08 Mar 2021 17:24:34 IST | Mon, 08 Mar 2021 17:24:34 IST |
+| start   |                         | minikube | root |         | Fri, 12 Mar 2021 15:54:28 IST | Fri, 12 Mar 2021 15:55:02 IST |
+| stop    |                         | minikube | root |         | Fri, 19 Mar 2021 15:23:03 IST | Fri, 19 Mar 2021 15:23:15 IST |
+| stop    |                         | minikube | root |         | Fri, 19 Mar 2021 15:37:14 IST | Fri, 19 Mar 2021 15:37:14 IST |
+| start   |                         | minikube | root |         | Wed, 24 Mar 2021 14:11:52 IST | Wed, 24 Mar 2021 14:12:30 IST |
+| stop    |                         | minikube | root |         | Thu, 01 Apr 2021 14:31:58 IST | Thu, 01 Apr 2021 14:32:10 IST |
+| start   |                         | minikube | root |         | Thu, 15 Apr 2021 16:47:40 IST | Thu, 15 Apr 2021 16:48:32 IST |
+| start   |                         | minikube | root |         | Tue, 24 Aug 2021 16:52:24 IST | Tue, 24 Aug 2021 16:53:09 IST |
+| stop    |                         | minikube | root |         | Tue, 24 Aug 2021 16:55:29 IST | Tue, 24 Aug 2021 16:55:39 IST |
+| start   |                         | minikube | root |         | Fri, 05 Nov 2021 13:42:51 IST | Fri, 05 Nov 2021 13:43:39 IST |
+| ip      |                         | minikube | root |         | Fri, 05 Nov 2021 13:52:16 IST | Fri, 05 Nov 2021 13:52:16 IST |
+| stop    |                         | minikube | root |         | Fri, 05 Nov 2021 14:50:14 IST | Fri, 05 Nov 2021 14:50:25 IST |
+| stop    |                         | minikube | root |         | Tue, 11 Jan 2022 12:00:25 IST | Tue, 11 Jan 2022 12:00:26 IST |
+| start   |                         | minikube | root |         | Fri, 14 Jan 2022 19:43:49 IST | Fri, 14 Jan 2022 19:45:29 IST |
+| ip      |                         | minikube | root |         | Fri, 14 Jan 2022 21:51:33 IST | Fri, 14 Jan 2022 21:51:34 IST |
+| stop    |                         | minikube | root |         | Fri, 14 Jan 2022 22:55:16 IST | Fri, 14 Jan 2022 22:55:30 IST |
+| start   | --vm=true --driver=none | minikube | root |         | Fri, 14 Jan 2022 22:55:44 IST | Fri, 14 Jan 2022 22:56:14 IST |
+| stop    |                         | minikube | root |         | Fri, 14 Jan 2022 22:58:09 IST | Fri, 14 Jan 2022 22:58:20 IST |
+| delete  |                         | minikube | root |         | Fri, 14 Jan 2022 22:58:55 IST | Fri, 14 Jan 2022 22:59:07 IST |
+| start   | --driver=none           | minikube | root |         | Fri, 14 Jan 2022 22:59:47 IST | Fri, 14 Jan 2022 23:00:20 IST |
+| delete  |                         | minikube | root |         | Fri, 14 Jan 2022 23:00:26 IST | Fri, 14 Jan 2022 23:00:31 IST |
+| start   | --driver=none           | minikube | root |         | Fri, 14 Jan 2022 23:01:37 IST | Fri, 14 Jan 2022 23:02:08 IST |
+| delete  |                         | minikube | root |         | Fri, 14 Jan 2022 23:06:25 IST | Fri, 14 Jan 2022 23:06:46 IST |
+| start   | --driver=none           | minikube | root | v1.24.0 | Fri, 14 Jan 2022 23:10:30 IST | Fri, 14 Jan 2022 23:12:21 IST |
+| service | web --url               | minikube | root | v1.24.0 | Fri, 14 Jan 2022 23:35:13 IST | Fri, 14 Jan 2022 23:35:13 IST |
+| addons  | enable metrics-server   | minikube | root | v1.24.0 | Sat, 15 Jan 2022 10:25:51 IST | Sat, 15 Jan 2022 10:26:04 IST |
+| addons  | list                    | minikube | root | v1.24.0 | Sat, 15 Jan 2022 10:26:26 IST | Sat, 15 Jan 2022 10:26:30 IST |
+| service | nginx-service --url     | minikube | root | v1.24.0 | Sat, 15 Jan 2022 10:35:17 IST | Sat, 15 Jan 2022 10:35:18 IST |
+|---------|-------------------------|----------|------|---------|-------------------------------|-------------------------------|
+
+* 
+* ==> Last Start <==
+* Log file created at: 2022/01/14 23:10:30
+Running on machine: jiowebosci1
+Binary: Built with gc go1.17.2 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0114 23:10:30.452178   60750 out.go:297] Setting OutFile to fd 1 ...
+I0114 23:10:30.452332   60750 out.go:344] TERM=xterm,COLORTERM=, which probably does not support color
+I0114 23:10:30.452343   60750 out.go:310] Setting ErrFile to fd 2...
+I0114 23:10:30.452355   60750 out.go:344] TERM=xterm,COLORTERM=, which probably does not support color
+I0114 23:10:30.452627   60750 root.go:313] Updating PATH: /root/.minikube/bin
+I0114 23:10:30.453086   60750 out.go:304] Setting JSON to false
+I0114 23:10:30.457856   60750 start.go:112] hostinfo: {"hostname":"jiowebosci1","uptime":44871,"bootTime":1642137160,"procs":461,"os":"linux","platform":"ubuntu","platformFamily":"debian","platformVersion":"16.04","kernelVersion":"4.4.0-204-generic","kernelArch":"x86_64","virtualizationSystem":"xen","virtualizationRole":"guest","hostId":"1174e0f0-0cac-94e6-7527-37ec212e4637"}
+I0114 23:10:30.457927   60750 start.go:122] virtualization: xen guest
+I0114 23:10:30.459940   60750 out.go:176] * minikube v1.24.0 on Ubuntu 16.04 (xen/amd64)
+I0114 23:10:30.460181   60750 driver.go:343] Setting default libvirt URI to qemu:///system
+W0114 23:10:30.460149   60750 preload.go:294] Failed to list preload files: open /root/.minikube/cache/preloaded-tarball: no such file or directory
+I0114 23:10:30.461052   60750 out.go:176] * Using the none driver based on user configuration
+I0114 23:10:30.461086   60750 start.go:280] selected driver: none
+I0114 23:10:30.461092   60750 start.go:762] validating driver "none" against <nil>
+I0114 23:10:30.461106   60750 start.go:773] status for none: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc:}
+I0114 23:10:30.460361   60750 notify.go:174] Checking for updates...
+I0114 23:10:30.461938   60750 start_flags.go:268] no existing cluster config was found, will generate one from the flags 
+I0114 23:10:30.463753   60750 start_flags.go:349] Using suggested 6000MB memory alloc based on sys=48279MB, container=0MB
+I0114 23:10:30.464689   60750 start_flags.go:736] Wait components to verify : map[apiserver:true system_pods:true]
+I0114 23:10:30.465166   60750 cni.go:93] Creating CNI manager for ""
+I0114 23:10:30.465192   60750 cni.go:147] Driver none used, CNI unnecessary in this configuration, recommending no CNI
+I0114 23:10:30.465307   60750 start_flags.go:282] config:
+{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.28@sha256:4780f1897569d2bf77aafb3d133a08d42b4fe61127f06fcfc90c2c5d902d893c Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:none HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.22.3 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin: FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: ExtraOptions:[] ShouldLoadCachedImages:false EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/root:/minikube-host}
+I0114 23:10:30.468208   60750 out.go:176] * Starting control plane node minikube in cluster minikube
+I0114 23:10:30.469012   60750 profile.go:147] Saving config to /root/.minikube/profiles/minikube/config.json ...
+I0114 23:10:30.469063   60750 lock.go:35] WriteFile acquiring /root/.minikube/profiles/minikube/config.json: {Name:mk270d1b5db5965f2dc9e9e25770a63417031943 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:10:30.469587   60750 cache.go:206] Successfully downloaded all kic artifacts
+I0114 23:10:30.469621   60750 start.go:313] acquiring machines lock for minikube: {Name:mkc8ab01ad3ea83211c505c81a7ee49a8e3ecb89 Clock:{} Delay:500ms Timeout:13m0s Cancel:<nil>}
+I0114 23:10:30.469734   60750 start.go:317] acquired machines lock for "minikube" in 87.351µs
+I0114 23:10:30.469760   60750 start.go:89] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.28@sha256:4780f1897569d2bf77aafb3d133a08d42b4fe61127f06fcfc90c2c5d902d893c Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:none HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.22.3 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin: FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: ExtraOptions:[] ShouldLoadCachedImages:false EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[{Name:m01 IP: Port:8443 KubernetesVersion:v1.22.3 ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/root:/minikube-host} &{Name:m01 IP: Port:8443 KubernetesVersion:v1.22.3 ControlPlane:true Worker:true}
+I0114 23:10:30.469865   60750 start.go:126] createHost starting for "m01" (driver="none")
+I0114 23:10:30.471126   60750 out.go:176] * Running on localhost (CPUs=20, Memory=48279MB, Disk=39858MB) ...
+I0114 23:10:30.471319   60750 exec_runner.go:51] Run: systemctl --version
+I0114 23:10:30.474636   60750 start.go:160] libmachine.API.Create for "minikube" (driver="none")
+I0114 23:10:30.474698   60750 client.go:168] LocalClient.Create starting
+I0114 23:10:30.474866   60750 main.go:130] libmachine: Reading certificate data from /root/.minikube/certs/ca.pem
+I0114 23:10:30.474917   60750 main.go:130] libmachine: Decoding PEM data...
+I0114 23:10:30.474951   60750 main.go:130] libmachine: Parsing certificate...
+I0114 23:10:30.475064   60750 main.go:130] libmachine: Reading certificate data from /root/.minikube/certs/cert.pem
+I0114 23:10:30.475105   60750 main.go:130] libmachine: Decoding PEM data...
+I0114 23:10:30.475131   60750 main.go:130] libmachine: Parsing certificate...
+I0114 23:10:30.475866   60750 client.go:171] LocalClient.Create took 1.149786ms
+I0114 23:10:30.475915   60750 start.go:168] duration metric: libmachine.API.Create for "minikube" took 1.282812ms
+I0114 23:10:30.475931   60750 start.go:267] post-start starting for "minikube" (driver="none")
+I0114 23:10:30.475946   60750 start.go:277] creating required directories: [/etc/kubernetes/addons /etc/kubernetes/manifests /var/tmp/minikube /var/lib/minikube /var/lib/minikube/certs /var/lib/minikube/images /var/lib/minikube/binaries /tmp/gvisor /usr/share/ca-certificates /etc/ssl/certs]
+I0114 23:10:30.476019   60750 exec_runner.go:51] Run: sudo mkdir -p /etc/kubernetes/addons /etc/kubernetes/manifests /var/tmp/minikube /var/lib/minikube /var/lib/minikube/certs /var/lib/minikube/images /var/lib/minikube/binaries /tmp/gvisor /usr/share/ca-certificates /etc/ssl/certs
+I0114 23:10:30.491283   60750 main.go:130] libmachine: Couldn't set key VERSION_CODENAME, no corresponding struct field found
+I0114 23:10:30.491330   60750 main.go:130] libmachine: Couldn't set key UBUNTU_CODENAME, no corresponding struct field found
+I0114 23:10:30.493014   60750 out.go:176] * OS release is Ubuntu 16.04.7 LTS
+I0114 23:10:30.493071   60750 filesync.go:126] Scanning /root/.minikube/addons for local assets ...
+I0114 23:10:30.493150   60750 filesync.go:126] Scanning /root/.minikube/files for local assets ...
+I0114 23:10:30.493190   60750 start.go:270] post-start completed in 17.24432ms
+I0114 23:10:30.494337   60750 profile.go:147] Saving config to /root/.minikube/profiles/minikube/config.json ...
+I0114 23:10:30.494544   60750 start.go:129] duration metric: createHost completed in 24.659671ms
+I0114 23:10:30.494560   60750 start.go:80] releasing machines lock for "minikube", held for 24.810077ms
+I0114 23:10:30.495579   60750 exec_runner.go:51] Run: sudo systemctl is-active --quiet service containerd
+I0114 23:10:30.495759   60750 exec_runner.go:51] Run: curl -sS -m 2 https://k8s.gcr.io/
+I0114 23:10:30.514098   60750 exec_runner.go:51] Run: /bin/bash -c "sudo mkdir -p /etc && printf %!s(MISSING) "runtime-endpoint: unix:///var/run/dockershim.sock
+image-endpoint: unix:///var/run/dockershim.sock
+" | sudo tee /etc/crictl.yaml"
+I0114 23:10:30.545619   60750 exec_runner.go:51] Run: sudo systemctl unmask docker.service
+I0114 23:10:30.645288   60750 exec_runner.go:51] Run: sudo systemctl enable docker.socket
+I0114 23:10:30.727155   60750 exec_runner.go:51] Run: sudo systemctl cat docker.service
+I0114 23:10:30.747247   60750 exec_runner.go:51] Run: sudo systemctl daemon-reload
+I0114 23:10:30.840374   60750 exec_runner.go:51] Run: sudo systemctl restart docker
+I0114 23:10:31.378039   60750 exec_runner.go:51] Run: docker version --format {{.Server.Version}}
+I0114 23:10:31.477470   60750 exec_runner.go:51] Run: docker version --format {{.Server.Version}}
+I0114 23:10:31.562108   60750 out.go:203] * Preparing Kubernetes v1.22.3 on Docker 20.10.7 ...
+I0114 23:10:31.562297   60750 exec_runner.go:51] Run: grep 127.0.0.1	host.minikube.internal$ /etc/hosts
+I0114 23:10:31.565493   60750 preload.go:132] Checking if preload exists for k8s version v1.22.3 and runtime docker
+I0114 23:10:31.565549   60750 exec_runner.go:51] Run: docker info --format {{.CgroupDriver}}
+I0114 23:10:31.766661   60750 cni.go:93] Creating CNI manager for ""
+I0114 23:10:31.766686   60750 cni.go:147] Driver none used, CNI unnecessary in this configuration, recommending no CNI
+I0114 23:10:31.766706   60750 kubeadm.go:87] Using pod CIDR: 10.244.0.0/16
+I0114 23:10:31.766735   60750 kubeadm.go:153] kubeadm options: {CertDir:/var/lib/minikube/certs ServiceCIDR:10.96.0.0/12 PodSubnet:10.244.0.0/16 AdvertiseAddress:172.26.0.53 APIServerPort:8443 KubernetesVersion:v1.22.3 EtcdDataDir:/var/lib/minikube/etcd EtcdExtraArgs:map[] ClusterName:minikube NodeName:jiowebosci1 DNSDomain:cluster.local CRISocket:/var/run/dockershim.sock ImageRepository: ComponentOptions:[{Component:apiServer ExtraArgs:map[enable-admission-plugins:NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota] Pairs:map[certSANs:["127.0.0.1", "localhost", "172.26.0.53"]]} {Component:controllerManager ExtraArgs:map[allocate-node-cidrs:true leader-elect:false] Pairs:map[]} {Component:scheduler ExtraArgs:map[leader-elect:false] Pairs:map[]}] FeatureArgs:map[] NoTaintMaster:true NodeIP:172.26.0.53 CgroupDriver:cgroupfs ClientCAFile:/var/lib/minikube/certs/ca.crt StaticPodPath:/etc/kubernetes/manifests ControlPlaneAddress:control-plane.minikube.internal KubeProxyOptions:map[]}
+I0114 23:10:31.767128   60750 kubeadm.go:157] kubeadm config:
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: InitConfiguration
+localAPIEndpoint:
+  advertiseAddress: 172.26.0.53
+  bindPort: 8443
+bootstrapTokens:
+  - groups:
+      - system:bootstrappers:kubeadm:default-node-token
+    ttl: 24h0m0s
+    usages:
+      - signing
+      - authentication
+nodeRegistration:
+  criSocket: /var/run/dockershim.sock
+  name: "jiowebosci1"
+  kubeletExtraArgs:
+    node-ip: 172.26.0.53
+  taints: []
+---
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+apiServer:
+  certSANs: ["127.0.0.1", "localhost", "172.26.0.53"]
+  extraArgs:
+    enable-admission-plugins: "NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota"
+controllerManager:
+  extraArgs:
+    allocate-node-cidrs: "true"
+    leader-elect: "false"
+scheduler:
+  extraArgs:
+    leader-elect: "false"
+certificatesDir: /var/lib/minikube/certs
+clusterName: mk
+controlPlaneEndpoint: control-plane.minikube.internal:8443
+dns:
+  type: CoreDNS
+etcd:
+  local:
+    dataDir: /var/lib/minikube/etcd
+    extraArgs:
+      proxy-refresh-interval: "70000"
+kubernetesVersion: v1.22.3
+networking:
+  dnsDomain: cluster.local
+  podSubnet: "10.244.0.0/16"
+  serviceSubnet: 10.96.0.0/12
+---
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+authentication:
+  x509:
+    clientCAFile: /var/lib/minikube/certs/ca.crt
+cgroupDriver: cgroupfs
+clusterDomain: "cluster.local"
+# disable disk resource management by default
+imageGCHighThresholdPercent: 100
+evictionHard:
+  nodefs.available: "0%!"(MISSING)
+  nodefs.inodesFree: "0%!"(MISSING)
+  imagefs.available: "0%!"(MISSING)
+failSwapOn: false
+staticPodPath: /etc/kubernetes/manifests
+---
+apiVersion: kubeproxy.config.k8s.io/v1alpha1
+kind: KubeProxyConfiguration
+clusterCIDR: "10.244.0.0/16"
+metricsBindAddress: 0.0.0.0:10249
+conntrack:
+  maxPerCore: 0
+# Skip setting "net.netfilter.nf_conntrack_tcp_timeout_established"
+  tcpEstablishedTimeout: 0s
+# Skip setting "net.netfilter.nf_conntrack_tcp_timeout_close"
+  tcpCloseWaitTimeout: 0s
+
+I0114 23:10:31.767359   60750 kubeadm.go:909] kubelet [Unit]
+Wants=docker.socket
+
+[Service]
+ExecStart=
+ExecStart=/var/lib/minikube/binaries/v1.22.3/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime=docker --hostname-override=jiowebosci1 --kubeconfig=/etc/kubernetes/kubelet.conf --node-ip=172.26.0.53
+
+[Install]
+ config:
+{KubernetesVersion:v1.22.3 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin: FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: ExtraOptions:[] ShouldLoadCachedImages:false EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:}
+I0114 23:10:31.767504   60750 exec_runner.go:51] Run: sudo ls /var/lib/minikube/binaries/v1.22.3
+I0114 23:10:31.781682   60750 binaries.go:47] Didn't find k8s binaries: sudo ls /var/lib/minikube/binaries/v1.22.3: exit status 2
+stdout:
+
+stderr:
+ls: cannot access '/var/lib/minikube/binaries/v1.22.3': No such file or directory
+
+Initiating transfer...
+I0114 23:10:31.781747   60750 exec_runner.go:51] Run: sudo mkdir -p /var/lib/minikube/binaries/v1.22.3
+I0114 23:10:31.795488   60750 download.go:100] Downloading: https://storage.googleapis.com/kubernetes-release/release/v1.22.3/bin/linux/amd64/kubelet?checksum=file:https://storage.googleapis.com/kubernetes-release/release/v1.22.3/bin/linux/amd64/kubelet.sha256 -> /root/.minikube/cache/linux/v1.22.3/kubelet
+I0114 23:10:31.795541   60750 download.go:100] Downloading: https://storage.googleapis.com/kubernetes-release/release/v1.22.3/bin/linux/amd64/kubectl?checksum=file:https://storage.googleapis.com/kubernetes-release/release/v1.22.3/bin/linux/amd64/kubectl.sha256 -> /root/.minikube/cache/linux/v1.22.3/kubectl
+I0114 23:10:31.795669   60750 download.go:100] Downloading: https://storage.googleapis.com/kubernetes-release/release/v1.22.3/bin/linux/amd64/kubeadm?checksum=file:https://storage.googleapis.com/kubernetes-release/release/v1.22.3/bin/linux/amd64/kubeadm.sha256 -> /root/.minikube/cache/linux/v1.22.3/kubeadm
+I0114 23:10:36.924594   60750 exec_runner.go:151] cp: /root/.minikube/cache/linux/v1.22.3/kubectl --> /var/lib/minikube/binaries/v1.22.3/kubectl (46907392 bytes)
+I0114 23:10:36.976394   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube3138603058 /var/lib/minikube/binaries/v1.22.3/kubectl
+I0114 23:10:45.921427   60750 exec_runner.go:151] cp: /root/.minikube/cache/linux/v1.22.3/kubeadm --> /var/lib/minikube/binaries/v1.22.3/kubeadm (45838336 bytes)
+I0114 23:10:45.965439   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube1166272138 /var/lib/minikube/binaries/v1.22.3/kubeadm
+I0114 23:10:47.491731   60750 exec_runner.go:51] Run: sudo systemctl is-active --quiet service kubelet
+I0114 23:10:47.511861   60750 exec_runner.go:151] cp: /root/.minikube/cache/linux/v1.22.3/kubelet --> /var/lib/minikube/binaries/v1.22.3/kubelet (121180280 bytes)
+I0114 23:10:47.637929   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube1959520061 /var/lib/minikube/binaries/v1.22.3/kubelet
+I0114 23:10:47.758118   60750 exec_runner.go:51] Run: sudo mkdir -p /etc/systemd/system/kubelet.service.d /lib/systemd/system /var/tmp/minikube
+I0114 23:10:47.774167   60750 exec_runner.go:144] found /etc/systemd/system/kubelet.service.d/10-kubeadm.conf, removing ...
+I0114 23:10:47.774188   60750 exec_runner.go:207] rm: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+I0114 23:10:47.774273   60750 exec_runner.go:151] cp: memory --> /etc/systemd/system/kubelet.service.d/10-kubeadm.conf (336 bytes)
+I0114 23:10:47.774487   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube2896600995 /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+I0114 23:10:47.789549   60750 exec_runner.go:144] found /lib/systemd/system/kubelet.service, removing ...
+I0114 23:10:47.789568   60750 exec_runner.go:207] rm: /lib/systemd/system/kubelet.service
+I0114 23:10:47.789639   60750 exec_runner.go:151] cp: memory --> /lib/systemd/system/kubelet.service (352 bytes)
+I0114 23:10:47.789796   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube2852395843 /lib/systemd/system/kubelet.service
+I0114 23:10:47.803833   60750 exec_runner.go:151] cp: memory --> /var/tmp/minikube/kubeadm.yaml.new (2051 bytes)
+I0114 23:10:47.804245   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube741530224 /var/tmp/minikube/kubeadm.yaml.new
+I0114 23:10:47.819024   60750 exec_runner.go:51] Run: grep 172.26.0.53	control-plane.minikube.internal$ /etc/hosts
+I0114 23:10:47.821950   60750 certs.go:54] Setting up /root/.minikube/profiles/minikube for IP: 172.26.0.53
+I0114 23:10:47.822195   60750 certs.go:182] skipping minikubeCA CA generation: /root/.minikube/ca.key
+I0114 23:10:47.822343   60750 certs.go:182] skipping proxyClientCA CA generation: /root/.minikube/proxy-client-ca.key
+I0114 23:10:47.822476   60750 certs.go:302] generating minikube-user signed cert: /root/.minikube/profiles/minikube/client.key
+I0114 23:10:47.822498   60750 crypto.go:68] Generating cert /root/.minikube/profiles/minikube/client.crt with IP's: []
+I0114 23:10:48.058270   60750 crypto.go:156] Writing cert to /root/.minikube/profiles/minikube/client.crt ...
+I0114 23:10:48.058287   60750 lock.go:35] WriteFile acquiring /root/.minikube/profiles/minikube/client.crt: {Name:mk09878e812b07af637940656ec44996daba95aa Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:10:48.058452   60750 crypto.go:164] Writing key to /root/.minikube/profiles/minikube/client.key ...
+I0114 23:10:48.058458   60750 lock.go:35] WriteFile acquiring /root/.minikube/profiles/minikube/client.key: {Name:mkf3b978f9858871583d8228f83a87a85b7d106f Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:10:48.058534   60750 certs.go:302] generating minikube signed cert: /root/.minikube/profiles/minikube/apiserver.key.25782dd9
+I0114 23:10:48.058547   60750 crypto.go:68] Generating cert /root/.minikube/profiles/minikube/apiserver.crt.25782dd9 with IP's: [172.26.0.53 10.96.0.1 127.0.0.1 10.0.0.1]
+I0114 23:10:48.170783   60750 crypto.go:156] Writing cert to /root/.minikube/profiles/minikube/apiserver.crt.25782dd9 ...
+I0114 23:10:48.170798   60750 lock.go:35] WriteFile acquiring /root/.minikube/profiles/minikube/apiserver.crt.25782dd9: {Name:mkd24debf925e8ad0910df834b90edf15fa75a60 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:10:48.170930   60750 crypto.go:164] Writing key to /root/.minikube/profiles/minikube/apiserver.key.25782dd9 ...
+I0114 23:10:48.170938   60750 lock.go:35] WriteFile acquiring /root/.minikube/profiles/minikube/apiserver.key.25782dd9: {Name:mk180434915d51551d88d331039390dd0ac79e41 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:10:48.171005   60750 certs.go:320] copying /root/.minikube/profiles/minikube/apiserver.crt.25782dd9 -> /root/.minikube/profiles/minikube/apiserver.crt
+I0114 23:10:48.171056   60750 certs.go:324] copying /root/.minikube/profiles/minikube/apiserver.key.25782dd9 -> /root/.minikube/profiles/minikube/apiserver.key
+I0114 23:10:48.171102   60750 certs.go:302] generating aggregator signed cert: /root/.minikube/profiles/minikube/proxy-client.key
+I0114 23:10:48.171111   60750 crypto.go:68] Generating cert /root/.minikube/profiles/minikube/proxy-client.crt with IP's: []
+I0114 23:10:48.324510   60750 crypto.go:156] Writing cert to /root/.minikube/profiles/minikube/proxy-client.crt ...
+I0114 23:10:48.324524   60750 lock.go:35] WriteFile acquiring /root/.minikube/profiles/minikube/proxy-client.crt: {Name:mkcab3ddb18cd096d978df14d87a44e804896057 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:10:48.324653   60750 crypto.go:164] Writing key to /root/.minikube/profiles/minikube/proxy-client.key ...
+I0114 23:10:48.324659   60750 lock.go:35] WriteFile acquiring /root/.minikube/profiles/minikube/proxy-client.key: {Name:mkaff5bf6f623f02423597918f5f33c2a99a3db1 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:10:48.324805   60750 certs.go:388] found cert: /root/.minikube/certs/root/.minikube/certs/ca-key.pem (1679 bytes)
+I0114 23:10:48.324832   60750 certs.go:388] found cert: /root/.minikube/certs/root/.minikube/certs/ca.pem (1074 bytes)
+I0114 23:10:48.324854   60750 certs.go:388] found cert: /root/.minikube/certs/root/.minikube/certs/cert.pem (1115 bytes)
+I0114 23:10:48.324875   60750 certs.go:388] found cert: /root/.minikube/certs/root/.minikube/certs/key.pem (1675 bytes)
+I0114 23:10:48.327003   60750 exec_runner.go:151] cp: /root/.minikube/profiles/minikube/apiserver.crt --> /var/lib/minikube/certs/apiserver.crt (1399 bytes)
+I0114 23:10:48.327106   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube1145444570 /var/lib/minikube/certs/apiserver.crt
+I0114 23:10:48.342682   60750 exec_runner.go:151] cp: /root/.minikube/profiles/minikube/apiserver.key --> /var/lib/minikube/certs/apiserver.key (1675 bytes)
+I0114 23:10:48.342797   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube1476151783 /var/lib/minikube/certs/apiserver.key
+I0114 23:10:48.357436   60750 exec_runner.go:151] cp: /root/.minikube/profiles/minikube/proxy-client.crt --> /var/lib/minikube/certs/proxy-client.crt (1147 bytes)
+I0114 23:10:48.357561   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube1633763712 /var/lib/minikube/certs/proxy-client.crt
+I0114 23:10:48.369904   60750 exec_runner.go:151] cp: /root/.minikube/profiles/minikube/proxy-client.key --> /var/lib/minikube/certs/proxy-client.key (1675 bytes)
+I0114 23:10:48.370061   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube4164071741 /var/lib/minikube/certs/proxy-client.key
+I0114 23:10:48.383646   60750 exec_runner.go:151] cp: /root/.minikube/ca.crt --> /var/lib/minikube/certs/ca.crt (1111 bytes)
+I0114 23:10:48.383824   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube2225094913 /var/lib/minikube/certs/ca.crt
+I0114 23:10:48.397115   60750 exec_runner.go:151] cp: /root/.minikube/ca.key --> /var/lib/minikube/certs/ca.key (1679 bytes)
+I0114 23:10:48.397292   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube90668287 /var/lib/minikube/certs/ca.key
+I0114 23:10:48.406370   60750 exec_runner.go:151] cp: /root/.minikube/proxy-client-ca.crt --> /var/lib/minikube/certs/proxy-client-ca.crt (1119 bytes)
+I0114 23:10:48.406552   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube3466100442 /var/lib/minikube/certs/proxy-client-ca.crt
+I0114 23:10:48.420636   60750 exec_runner.go:151] cp: /root/.minikube/proxy-client-ca.key --> /var/lib/minikube/certs/proxy-client-ca.key (1679 bytes)
+I0114 23:10:48.420864   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube432773300 /var/lib/minikube/certs/proxy-client-ca.key
+I0114 23:10:48.435919   60750 exec_runner.go:144] found /usr/share/ca-certificates/minikubeCA.pem, removing ...
+I0114 23:10:48.435936   60750 exec_runner.go:207] rm: /usr/share/ca-certificates/minikubeCA.pem
+I0114 23:10:48.436021   60750 exec_runner.go:151] cp: /root/.minikube/ca.crt --> /usr/share/ca-certificates/minikubeCA.pem (1111 bytes)
+I0114 23:10:48.436205   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube2711150276 /usr/share/ca-certificates/minikubeCA.pem
+I0114 23:10:48.447354   60750 exec_runner.go:151] cp: memory --> /var/lib/minikube/kubeconfig (744 bytes)
+I0114 23:10:48.447602   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube2605663640 /var/lib/minikube/kubeconfig
+I0114 23:10:48.456946   60750 exec_runner.go:51] Run: openssl version
+I0114 23:10:48.463818   60750 exec_runner.go:51] Run: sudo /bin/bash -c "test -s /usr/share/ca-certificates/minikubeCA.pem && ln -fs /usr/share/ca-certificates/minikubeCA.pem /etc/ssl/certs/minikubeCA.pem"
+I0114 23:10:48.480061   60750 exec_runner.go:51] Run: ls -la /usr/share/ca-certificates/minikubeCA.pem
+I0114 23:10:48.482153   60750 certs.go:431] hashing: -rw-r--r-- 1 root root 1111 Jan 14 23:10 /usr/share/ca-certificates/minikubeCA.pem
+I0114 23:10:48.482242   60750 exec_runner.go:51] Run: openssl x509 -hash -noout -in /usr/share/ca-certificates/minikubeCA.pem
+I0114 23:10:48.485939   60750 exec_runner.go:51] Run: sudo /bin/bash -c "test -L /etc/ssl/certs/b5213941.0 || ln -fs /etc/ssl/certs/minikubeCA.pem /etc/ssl/certs/b5213941.0"
+I0114 23:10:48.494579   60750 kubeadm.go:390] StartCluster: {Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.28@sha256:4780f1897569d2bf77aafb3d133a08d42b4fe61127f06fcfc90c2c5d902d893c Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:none HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.22.3 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin: FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: ExtraOptions:[] ShouldLoadCachedImages:false EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[{Name:m01 IP:172.26.0.53 Port:8443 KubernetesVersion:v1.22.3 ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/root:/minikube-host}
+I0114 23:10:48.494762   60750 exec_runner.go:51] Run: docker ps --filter status=paused --filter=name=k8s_.*_(kube-system)_ --format={{.ID}}
+I0114 23:10:48.556353   60750 exec_runner.go:51] Run: sudo ls /var/lib/kubelet/kubeadm-flags.env /var/lib/kubelet/config.yaml /var/lib/minikube/etcd
+I0114 23:10:48.570696   60750 exec_runner.go:51] Run: sudo cp /var/tmp/minikube/kubeadm.yaml.new /var/tmp/minikube/kubeadm.yaml
+I0114 23:10:48.582280   60750 exec_runner.go:51] Run: docker version --format {{.Server.Version}}
+I0114 23:10:48.663026   60750 exec_runner.go:51] Run: sudo ls -la /etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf
+I0114 23:10:48.677475   60750 kubeadm.go:151] config check failed, skipping stale config cleanup: sudo ls -la /etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf: exit status 2
+stdout:
+
+stderr:
+ls: cannot access '/etc/kubernetes/admin.conf': No such file or directory
+ls: cannot access '/etc/kubernetes/kubelet.conf': No such file or directory
+ls: cannot access '/etc/kubernetes/controller-manager.conf': No such file or directory
+ls: cannot access '/etc/kubernetes/scheduler.conf': No such file or directory
+I0114 23:10:48.677661   60750 exec_runner.go:97] Start: /bin/bash -c "sudo env PATH="/var/lib/minikube/binaries/v1.22.3:$PATH" kubeadm init --config /var/tmp/minikube/kubeadm.yaml  --ignore-preflight-errors=DirAvailable--etc-kubernetes-manifests,DirAvailable--var-lib-minikube,DirAvailable--var-lib-minikube-etcd,FileAvailable--etc-kubernetes-manifests-kube-scheduler.yaml,FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml,FileAvailable--etc-kubernetes-manifests-kube-controller-manager.yaml,FileAvailable--etc-kubernetes-manifests-etcd.yaml,Port-10250,Swap,Mem"
+I0114 23:12:06.982028   60750 out.go:203]   - Generating certificates and keys ...
+I0114 23:12:10.112787   60750 out.go:203]   - Booting up control plane ...
+I0114 23:12:20.214670   60750 out.go:203]   - Configuring RBAC rules ...
+I0114 23:12:20.648822   60750 cni.go:93] Creating CNI manager for ""
+I0114 23:12:20.648844   60750 cni.go:147] Driver none used, CNI unnecessary in this configuration, recommending no CNI
+I0114 23:12:20.648882   60750 exec_runner.go:51] Run: /bin/bash -c "cat /proc/$(pgrep kube-apiserver)/oom_adj"
+I0114 23:12:20.649040   60750 exec_runner.go:51] Run: sudo /var/lib/minikube/binaries/v1.22.3/kubectl create clusterrolebinding minikube-rbac --clusterrole=cluster-admin --serviceaccount=kube-system:default --kubeconfig=/var/lib/minikube/kubeconfig
+I0114 23:12:20.649084   60750 exec_runner.go:51] Run: sudo /var/lib/minikube/binaries/v1.22.3/kubectl label nodes minikube.k8s.io/version=v1.24.0 minikube.k8s.io/commit=76b94fb3c4e8ac5062daf70d60cf03ddcc0a741b minikube.k8s.io/name=minikube minikube.k8s.io/updated_at=2022_01_14T23_12_20_0700 --all --overwrite --kubeconfig=/var/lib/minikube/kubeconfig
+I0114 23:12:20.679811   60750 ops.go:34] apiserver oom_adj: -16
+I0114 23:12:20.757134   60750 kubeadm.go:985] duration metric: took 108.210729ms to wait for elevateKubeSystemPrivileges.
+I0114 23:12:20.818305   60750 kubeadm.go:392] StartCluster complete in 1m32.32372769s
+I0114 23:12:20.818351   60750 settings.go:142] acquiring lock: {Name:mk19004591210340446308469f521c5cfa3e1599 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:12:20.818508   60750 settings.go:150] Updating kubeconfig:  /root/.kube/config
+I0114 23:12:20.820519   60750 lock.go:35] WriteFile acquiring /root/.kube/config: {Name:mk72a1487fd2da23da9e8181e16f352a6105bd56 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0114 23:12:21.346243   60750 kapi.go:244] deployment "coredns" in namespace "kube-system" and context "minikube" rescaled to 1
+I0114 23:12:21.348039   60750 out.go:176] * Configuring local host environment ...
+I0114 23:12:21.346483   60750 exec_runner.go:51] Run: /bin/bash -c "sudo /var/lib/minikube/binaries/v1.22.3/kubectl --kubeconfig=/var/lib/minikube/kubeconfig -n kube-system get configmap coredns -o yaml"
+I0114 23:12:21.346554   60750 addons.go:415] enableAddons start: toEnable=map[], additional=[]
+W0114 23:12:21.348391   60750 out.go:241] * 
+W0114 23:12:21.348415   60750 out.go:241] ! The 'none' driver is designed for experts who need to integrate with an existing VM
+I0114 23:12:21.348427   60750 addons.go:65] Setting storage-provisioner=true in profile "minikube"
+I0114 23:12:21.348460   60750 addons.go:153] Setting addon storage-provisioner=true in "minikube"
+W0114 23:12:21.348472   60750 addons.go:165] addon storage-provisioner should already be in state true
+W0114 23:12:21.348490   60750 out.go:241] * Most users should use the newer 'docker' driver instead, which does not require root!
+W0114 23:12:21.348512   60750 out.go:241] * For more information, see: https://minikube.sigs.k8s.io/docs/reference/drivers/none/
+I0114 23:12:21.348525   60750 host.go:66] Checking if "minikube" exists ...
+W0114 23:12:21.348529   60750 out.go:241] * 
+I0114 23:12:21.346797   60750 config.go:176] Loaded profile config "minikube": Driver=none, ContainerRuntime=docker, KubernetesVersion=v1.22.3
+I0114 23:12:21.349071   60750 addons.go:65] Setting default-storageclass=true in profile "minikube"
+I0114 23:12:21.349113   60750 addons_storage_classes.go:33] enableOrDisableStorageClasses default-storageclass=true on "minikube"
+I0114 23:12:21.350092   60750 kubeconfig.go:92] found "minikube" server: "https://172.26.0.53:8443"
+I0114 23:12:21.350114   60750 api_server.go:165] Checking apiserver status ...
+I0114 23:12:21.350173   60750 exec_runner.go:51] Run: sudo pgrep -xnf kube-apiserver.*minikube.*
+I0114 23:12:21.350283   60750 kubeconfig.go:92] found "minikube" server: "https://172.26.0.53:8443"
+I0114 23:12:21.350307   60750 api_server.go:165] Checking apiserver status ...
+I0114 23:12:21.350370   60750 exec_runner.go:51] Run: sudo pgrep -xnf kube-apiserver.*minikube.*
+W0114 23:12:21.350688   60750 out.go:241] ! kubectl and minikube configuration will be stored in /root
+W0114 23:12:21.351247   60750 out.go:241] ! To use kubectl or minikube commands as your own user, you may need to relocate them. For example, to overwrite your own settings, run:
+W0114 23:12:21.351595   60750 out.go:241] * 
+W0114 23:12:21.352125   60750 out.go:241]   - sudo mv /root/.kube /root/.minikube $HOME
+W0114 23:12:21.352479   60750 out.go:241]   - sudo chown -R $USER $HOME/.kube $HOME/.minikube
+W0114 23:12:21.352822   60750 out.go:241] * 
+W0114 23:12:21.353173   60750 out.go:241] * This can also be done automatically by setting the env var CHANGE_MINIKUBE_NONE_USER=true
+I0114 23:12:21.353471   60750 start.go:229] Will wait 6m0s for node &{Name:m01 IP:172.26.0.53 Port:8443 KubernetesVersion:v1.22.3 ControlPlane:true Worker:true}
+I0114 23:12:21.354517   60750 out.go:176] * Verifying Kubernetes components...
+I0114 23:12:21.354835   60750 exec_runner.go:51] Run: sudo systemctl is-active --quiet service kubelet
+I0114 23:12:21.377721   60750 api_server.go:51] waiting for apiserver process to appear ...
+I0114 23:12:21.377816   60750 exec_runner.go:51] Run: sudo pgrep -xnf kube-apiserver.*minikube.*
+I0114 23:12:21.385639   60750 exec_runner.go:51] Run: sudo egrep ^[0-9]+:freezer: /proc/63100/cgroup
+I0114 23:12:21.387110   60750 exec_runner.go:51] Run: sudo egrep ^[0-9]+:freezer: /proc/63100/cgroup
+I0114 23:12:21.396186   60750 api_server.go:181] apiserver freezer: "2:freezer:/kubepods/burstable/poda520866fc53a3f0ddebbbea5a920d030/66ef7bd8fd187813a7706e2133e538df71eff7f6540d3965f0bb0e6975995134"
+I0114 23:12:21.396344   60750 exec_runner.go:51] Run: sudo cat /sys/fs/cgroup/freezer/kubepods/burstable/poda520866fc53a3f0ddebbbea5a920d030/66ef7bd8fd187813a7706e2133e538df71eff7f6540d3965f0bb0e6975995134/freezer.state
+I0114 23:12:21.402461   60750 api_server.go:181] apiserver freezer: "2:freezer:/kubepods/burstable/poda520866fc53a3f0ddebbbea5a920d030/66ef7bd8fd187813a7706e2133e538df71eff7f6540d3965f0bb0e6975995134"
+I0114 23:12:21.402555   60750 exec_runner.go:51] Run: sudo cat /sys/fs/cgroup/freezer/kubepods/burstable/poda520866fc53a3f0ddebbbea5a920d030/66ef7bd8fd187813a7706e2133e538df71eff7f6540d3965f0bb0e6975995134/freezer.state
+I0114 23:12:21.405778   60750 api_server.go:71] duration metric: took 52.262843ms to wait for apiserver process to appear ...
+I0114 23:12:21.405794   60750 api_server.go:87] waiting for apiserver healthz status ...
+I0114 23:12:21.405810   60750 api_server.go:240] Checking apiserver healthz at https://172.26.0.53:8443/healthz ...
+I0114 23:12:21.409897   60750 api_server.go:203] freezer state: "THAWED"
+I0114 23:12:21.409948   60750 api_server.go:240] Checking apiserver healthz at https://172.26.0.53:8443/healthz ...
+I0114 23:12:21.410513   60750 api_server.go:203] freezer state: "THAWED"
+I0114 23:12:21.410545   60750 api_server.go:240] Checking apiserver healthz at https://172.26.0.53:8443/healthz ...
+I0114 23:12:21.415823   60750 api_server.go:266] https://172.26.0.53:8443/healthz returned 200:
+ok
+I0114 23:12:21.417120   60750 api_server.go:140] control plane version: v1.22.3
+I0114 23:12:21.417144   60750 api_server.go:130] duration metric: took 11.339314ms to wait for apiserver health ...
+I0114 23:12:21.417159   60750 system_pods.go:43] waiting for kube-system pods to appear ...
+I0114 23:12:21.419222   60750 api_server.go:266] https://172.26.0.53:8443/healthz returned 200:
+ok
+I0114 23:12:21.421903   60750 api_server.go:266] https://172.26.0.53:8443/healthz returned 200:
+ok
+I0114 23:12:21.423175   60750 out.go:176]   - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+I0114 23:12:21.423274   60750 addons.go:348] installing /etc/kubernetes/addons/storage-provisioner.yaml
+I0114 23:12:21.423288   60750 exec_runner.go:144] found /etc/kubernetes/addons/storage-provisioner.yaml, removing ...
+I0114 23:12:21.423293   60750 exec_runner.go:207] rm: /etc/kubernetes/addons/storage-provisioner.yaml
+I0114 23:12:21.423336   60750 exec_runner.go:151] cp: memory --> /etc/kubernetes/addons/storage-provisioner.yaml (2676 bytes)
+I0114 23:12:21.423482   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube2886989038 /etc/kubernetes/addons/storage-provisioner.yaml
+I0114 23:12:21.431372   60750 addons.go:153] Setting addon default-storageclass=true in "minikube"
+W0114 23:12:21.431389   60750 addons.go:165] addon default-storageclass should already be in state true
+I0114 23:12:21.431493   60750 host.go:66] Checking if "minikube" exists ...
+I0114 23:12:21.432404   60750 kubeconfig.go:92] found "minikube" server: "https://172.26.0.53:8443"
+I0114 23:12:21.432421   60750 api_server.go:165] Checking apiserver status ...
+I0114 23:12:21.432474   60750 exec_runner.go:51] Run: sudo pgrep -xnf kube-apiserver.*minikube.*
+I0114 23:12:21.432711   60750 system_pods.go:59] 4 kube-system pods found
+I0114 23:12:21.432727   60750 system_pods.go:61] "etcd-jiowebosci1" [2244e6ac-b973-4860-8895-a20d9391af77] Pending
+I0114 23:12:21.432733   60750 system_pods.go:61] "kube-apiserver-jiowebosci1" [6c1167bc-4bd8-4179-a88a-c2edafd1f5b4] Pending
+I0114 23:12:21.432738   60750 system_pods.go:61] "kube-controller-manager-jiowebosci1" [8fe3d73e-2b32-41ad-8f35-261db262b778] Pending
+I0114 23:12:21.432743   60750 system_pods.go:61] "kube-scheduler-jiowebosci1" [cce11ce4-aab6-4c9b-a618-49ce6ac006cb] Pending
+I0114 23:12:21.432748   60750 system_pods.go:74] duration metric: took 15.578692ms to wait for pod list to return data ...
+I0114 23:12:21.432756   60750 kubeadm.go:547] duration metric: took 79.246273ms to wait for : map[apiserver:true system_pods:true] ...
+I0114 23:12:21.432770   60750 node_conditions.go:102] verifying NodePressure condition ...
+I0114 23:12:21.438674   60750 node_conditions.go:122] node storage ephemeral capacity is 40815176Ki
+I0114 23:12:21.438704   60750 node_conditions.go:123] node cpu capacity is 20
+I0114 23:12:21.438728   60750 node_conditions.go:105] duration metric: took 5.950146ms to run NodePressure ...
+I0114 23:12:21.438751   60750 start.go:234] waiting for startup goroutines ...
+I0114 23:12:21.440031   60750 exec_runner.go:51] Run: sudo KUBECONFIG=/var/lib/minikube/kubeconfig /var/lib/minikube/binaries/v1.22.3/kubectl apply -f /etc/kubernetes/addons/storage-provisioner.yaml
+I0114 23:12:21.461765   60750 exec_runner.go:51] Run: sudo egrep ^[0-9]+:freezer: /proc/63100/cgroup
+I0114 23:12:21.472797   60750 exec_runner.go:51] Run: /bin/bash -c "sudo /var/lib/minikube/binaries/v1.22.3/kubectl --kubeconfig=/var/lib/minikube/kubeconfig -n kube-system get configmap coredns -o yaml | sed '/^        forward . \/etc\/resolv.conf.*/i \        hosts {\n           127.0.0.1 host.minikube.internal\n           fallthrough\n        }' | sudo /var/lib/minikube/binaries/v1.22.3/kubectl --kubeconfig=/var/lib/minikube/kubeconfig replace -f -"
+I0114 23:12:21.473897   60750 api_server.go:181] apiserver freezer: "2:freezer:/kubepods/burstable/poda520866fc53a3f0ddebbbea5a920d030/66ef7bd8fd187813a7706e2133e538df71eff7f6540d3965f0bb0e6975995134"
+I0114 23:12:21.473972   60750 exec_runner.go:51] Run: sudo cat /sys/fs/cgroup/freezer/kubepods/burstable/poda520866fc53a3f0ddebbbea5a920d030/66ef7bd8fd187813a7706e2133e538df71eff7f6540d3965f0bb0e6975995134/freezer.state
+I0114 23:12:21.486405   60750 api_server.go:203] freezer state: "THAWED"
+I0114 23:12:21.486775   60750 api_server.go:240] Checking apiserver healthz at https://172.26.0.53:8443/healthz ...
+I0114 23:12:21.492716   60750 api_server.go:266] https://172.26.0.53:8443/healthz returned 200:
+ok
+I0114 23:12:21.492789   60750 addons.go:348] installing /etc/kubernetes/addons/storageclass.yaml
+I0114 23:12:21.492805   60750 exec_runner.go:144] found /etc/kubernetes/addons/storageclass.yaml, removing ...
+I0114 23:12:21.492812   60750 exec_runner.go:207] rm: /etc/kubernetes/addons/storageclass.yaml
+I0114 23:12:21.492861   60750 exec_runner.go:151] cp: memory --> /etc/kubernetes/addons/storageclass.yaml (271 bytes)
+I0114 23:12:21.492969   60750 exec_runner.go:51] Run: sudo cp -a /tmp/minikube2514079317 /etc/kubernetes/addons/storageclass.yaml
+I0114 23:12:21.502661   60750 exec_runner.go:51] Run: sudo KUBECONFIG=/var/lib/minikube/kubeconfig /var/lib/minikube/binaries/v1.22.3/kubectl apply -f /etc/kubernetes/addons/storageclass.yaml
+I0114 23:12:21.765791   60750 start.go:739] {"host.minikube.internal": 127.0.0.1} host record injected into CoreDNS
+I0114 23:12:21.824321   60750 out.go:176] * Enabled addons: storage-provisioner, default-storageclass
+I0114 23:12:21.824467   60750 addons.go:417] enableAddons completed in 477.952294ms
+I0114 23:12:21.902119   60750 start.go:473] kubectl: 1.21.1, cluster: 1.22.3 (minor skew: 1)
+I0114 23:12:21.903785   60750 out.go:176] * Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+* 
+* ==> Docker <==
+* -- Logs begin at Sat 2022-01-15 04:39:52 IST, end at Sat 2022-01-15 11:18:57 IST. --
+Jan 15 11:18:36 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:36.615841238+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:36 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:36.721845105+05:30" level=error msg="ef58264d357f4cb0f9386658f911971b50d2be59e31c449f4868756150747d0c cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:36 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:36.721965911+05:30" level=error msg="Handler for POST /v1.41/containers/ef58264d357f4cb0f9386658f911971b50d2be59e31c449f4868756150747d0c/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39638 (5c53c54b9abe2b14796a071c4647cacd0c41318e354a0cb3f4a1a110e20d3e9a): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:37 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:37.688514885+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:37 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:37.797770491+05:30" level=error msg="44aab76002e6c5fa12516901ced8de9a454b586c5a3303bade95cd19d5c27ef2 cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:37 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:37.797875123+05:30" level=error msg="Handler for POST /v1.41/containers/44aab76002e6c5fa12516901ced8de9a454b586c5a3303bade95cd19d5c27ef2/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39639 (465b8fffea3eaf1f7dca485fc385096a6f122ff23873f699d54b674cf815c18e): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:38 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:38.733405073+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:38 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:38.853693735+05:30" level=error msg="f998c2c4dcc6946ef611cc5362d0386167967a24feb802b781407d5ba0f2da02 cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:38 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:38.853775542+05:30" level=error msg="Handler for POST /v1.41/containers/f998c2c4dcc6946ef611cc5362d0386167967a24feb802b781407d5ba0f2da02/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39640 (fbb84b4710aa4fa5c47c1943ce8a53d56f8db8b8f27ea79dfd7068b645d51e5f): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:39 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:39.793030494+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:39 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:39.893808749+05:30" level=error msg="bea1df75fd40de4a0968fb9be41945101fa8c06d423377ef90237e1c8a93228b cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:39 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:39.893919842+05:30" level=error msg="Handler for POST /v1.41/containers/bea1df75fd40de4a0968fb9be41945101fa8c06d423377ef90237e1c8a93228b/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39641 (87fe4da448e6da4015e1d6d2c6602b1215eb1e1adf406445af0d938f2fa9766d): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:40 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:40.859526510+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:40 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:40.993792050+05:30" level=error msg="451741b4e4dba7d2926dabefc9a79b559d8ac77e410e76c1f3626b777f8aa12c cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:40 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:40.993895791+05:30" level=error msg="Handler for POST /v1.41/containers/451741b4e4dba7d2926dabefc9a79b559d8ac77e410e76c1f3626b777f8aa12c/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39642 (d6af924ff3ba17dc26ded19aedf06e7ecbcd99022104940d6e4a23c1bac30091): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:41 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:41.936766681+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:42 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:42.054117812+05:30" level=error msg="ab52fb1c7e3da9ccc4e7e47b39ce7e5b73e55ecdd24d7f61cdd65af29300ecb9 cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:42 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:42.054211843+05:30" level=error msg="Handler for POST /v1.41/containers/ab52fb1c7e3da9ccc4e7e47b39ce7e5b73e55ecdd24d7f61cdd65af29300ecb9/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39643 (6a9210071dcc64fdf8808d20b45990cda35a0a597317a874bc873b541bd05e1a): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:43 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:43.012370895+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:43 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:43.125010595+05:30" level=error msg="4a55e377e91dec70164fb859048918734526ee5c614023c0f0fdeb45bf2be2a8 cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:43 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:43.125129815+05:30" level=error msg="Handler for POST /v1.41/containers/4a55e377e91dec70164fb859048918734526ee5c614023c0f0fdeb45bf2be2a8/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39644 (df2be5e12a80d32a0a2ed96fa1aa47e6f418e6a255fd0ce33d6aaaaf6d38713c): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:44 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:44.062991643+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:44 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:44.173785407+05:30" level=error msg="0e41bcba96965b565a103d2c303763899cf040ae52e2d45ba0bb581a00442b88 cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:44 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:44.173925085+05:30" level=error msg="Handler for POST /v1.41/containers/0e41bcba96965b565a103d2c303763899cf040ae52e2d45ba0bb581a00442b88/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39645 (ce05ed07222531613817c6600047862fe0e7b8a4a07db1b22eede75bd9216a57): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:45 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:45.144536253+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:45 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:45.254653762+05:30" level=error msg="36d9ae30c4bfe7fe8a2269f430837e0b020e261c3c5dad0a6273ccbb5eac7dfe cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:45 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:45.255163422+05:30" level=error msg="Handler for POST /v1.41/containers/36d9ae30c4bfe7fe8a2269f430837e0b020e261c3c5dad0a6273ccbb5eac7dfe/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39646 (bf4334ec95edc6bb641f7cda3394265486ed4a40008ccc76ffa0cf41f2e0174b): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:46 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:46.215085701+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:46 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:46.317826156+05:30" level=error msg="5617c82d6d1237c48cc10b9efeec07370c12341ae540b82c4d6ff86120a64966 cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:46 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:46.317943478+05:30" level=error msg="Handler for POST /v1.41/containers/5617c82d6d1237c48cc10b9efeec07370c12341ae540b82c4d6ff86120a64966/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39647 (39bd3001450620ff3a427cf0b2988c9964eb84e5fe558ff8e97fbdd605d4bb43): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:47 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:47.303218633+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:47 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:47.422133043+05:30" level=error msg="ceb28909bc3f3b38b7c7f4940d3d4e49ed93fdf0c8a61115874f200cf0f2c42d cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:47 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:47.422252488+05:30" level=error msg="Handler for POST /v1.41/containers/ceb28909bc3f3b38b7c7f4940d3d4e49ed93fdf0c8a61115874f200cf0f2c42d/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39648 (7777ee36e25e449a7c5217a973900ef00b86566d9d283b3c27e0738e62eeca3e): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:48 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:48.372043039+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:48 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:48.474242362+05:30" level=error msg="63552e5fd2a2033cca01ec3a344722d4166778f0c63074cc19e6379e96a31972 cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:48 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:48.474368713+05:30" level=error msg="Handler for POST /v1.41/containers/63552e5fd2a2033cca01ec3a344722d4166778f0c63074cc19e6379e96a31972/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39649 (9e6ff2bc8b15a377944b71b038059cf8d41b190a3b1c0b7092917488ccbaeea5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:49 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:49.454485310+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:49 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:49.569732034+05:30" level=error msg="cea70350aaacf19cd6c1a38b4cd32851b4bef77d656e3579cd2be1ec9ee263ab cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:49 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:49.569835016+05:30" level=error msg="Handler for POST /v1.41/containers/cea70350aaacf19cd6c1a38b4cd32851b4bef77d656e3579cd2be1ec9ee263ab/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39650 (7aab0c06facef02837b1273e90a236ff9ce672cd2248a6b9cb77f3be5c654602): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:50 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:50.515712467+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:50 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:50.637804542+05:30" level=error msg="e8e55ed3715a63524061c11db111a5fbf6a8c9607a0dad038478d36f788bf459 cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:50 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:50.637914656+05:30" level=error msg="Handler for POST /v1.41/containers/e8e55ed3715a63524061c11db111a5fbf6a8c9607a0dad038478d36f788bf459/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39651 (cf3cad55e522e92a84a13231ee3432fde8bef1faba0471be549123e260ae5ef7): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:51 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:51.612118490+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:51 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:51.719876213+05:30" level=error msg="63648475d87595f5ab95938f3a47aa5aad8df1a541baf04af787fe53f7f667dc cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:51 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:51.720606417+05:30" level=error msg="Handler for POST /v1.41/containers/63648475d87595f5ab95938f3a47aa5aad8df1a541baf04af787fe53f7f667dc/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39652 (d3d54c62df1317a5668f30eb4315db608fbe94c94bac4048c9d17fd2490d82a4): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:52 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:52.724795004+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:52 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:52.838098775+05:30" level=error msg="6766c2ced5930dfcc1451aa13710b21618831f97f5f42e9667ea1a455355f07c cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:52 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:52.838216376+05:30" level=error msg="Handler for POST /v1.41/containers/6766c2ced5930dfcc1451aa13710b21618831f97f5f42e9667ea1a455355f07c/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39653 (55b2a865b820ffc1c3d40e3af7843e137ef730ba4a376630b93d19ba4ff10e5b): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:53 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:53.779912924+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:53 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:53.905858019+05:30" level=error msg="201c4cc923e98584c4c7f8c70b10858472fda5900d9138e5f2df11b06e09f4ff cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:53 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:53.905988625+05:30" level=error msg="Handler for POST /v1.41/containers/201c4cc923e98584c4c7f8c70b10858472fda5900d9138e5f2df11b06e09f4ff/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39654 (56c8b1304045e75ff8011cfe934149a10789c9e692c852a9dd4d70b20974cef2): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:54 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:54.893648301+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:55 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:55.005856962+05:30" level=error msg="5051a3d8f11d3f4710db6d736ebde0903fa2d39f3a061c1b8624c4e7a349685d cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:55 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:55.005969958+05:30" level=error msg="Handler for POST /v1.41/containers/5051a3d8f11d3f4710db6d736ebde0903fa2d39f3a061c1b8624c4e7a349685d/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39655 (e01b879a3085d5c0004fedf38261b176d0d5562d757fe11c7c02a1b710a4c528): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:55 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:55.998344342+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:56 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:56.121840618+05:30" level=error msg="14372411da561273c47135a857de9ffe090070be701c517974353a353c35848e cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:56 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:56.121950986+05:30" level=error msg="Handler for POST /v1.41/containers/14372411da561273c47135a857de9ffe090070be701c517974353a353c35848e/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39656 (592b2d5986b6f3b82aea5d2fce2b0a082d4edd765a37e3cf9d9c736869eba11d): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:57 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:57.210782687+05:30" level=warning msg="Failed to allocate and map port 80-80: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:57 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:57.341853829+05:30" level=error msg="32272db299a67900d7bf20afd9b2d8b627c15e122b18e081fd23c58fb02dec7b cleanup: failed to delete container from containerd: no such container"
+Jan 15 11:18:57 jiowebosci1 dockerd[60842]: time="2022-01-15T11:18:57.341976146+05:30" level=error msg="Handler for POST /v1.41/containers/32272db299a67900d7bf20afd9b2d8b627c15e122b18e081fd23c58fb02dec7b/start returned error: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39657 (0a2287086f33c398a79157e483029fa5b2b74370821c1b0362fe9a76f5568e31): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+
+* 
+* ==> container status <==
+* sudo: crictl: command not found
+CONTAINER ID   IMAGE                                           COMMAND                  CREATED          STATUS                    PORTS     NAMES
+32272db299a6   k8s.gcr.io/pause:3.5                            "/pause"                 1 second ago     Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39657
+14372411da56   k8s.gcr.io/pause:3.5                            "/pause"                 2 seconds ago    Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39656
+5051a3d8f11d   k8s.gcr.io/pause:3.5                            "/pause"                 3 seconds ago    Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39655
+201c4cc923e9   k8s.gcr.io/pause:3.5                            "/pause"                 4 seconds ago    Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39654
+6766c2ced593   k8s.gcr.io/pause:3.5                            "/pause"                 5 seconds ago    Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39653
+63648475d875   k8s.gcr.io/pause:3.5                            "/pause"                 6 seconds ago    Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39652
+e8e55ed3715a   k8s.gcr.io/pause:3.5                            "/pause"                 7 seconds ago    Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39651
+cea70350aaac   k8s.gcr.io/pause:3.5                            "/pause"                 8 seconds ago    Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39650
+63552e5fd2a2   k8s.gcr.io/pause:3.5                            "/pause"                 9 seconds ago    Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39649
+ceb28909bc3f   k8s.gcr.io/pause:3.5                            "/pause"                 10 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39648
+5617c82d6d12   k8s.gcr.io/pause:3.5                            "/pause"                 11 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39647
+36d9ae30c4bf   k8s.gcr.io/pause:3.5                            "/pause"                 12 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39646
+0e41bcba9696   k8s.gcr.io/pause:3.5                            "/pause"                 14 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39645
+4a55e377e91d   k8s.gcr.io/pause:3.5                            "/pause"                 15 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39644
+ab52fb1c7e3d   k8s.gcr.io/pause:3.5                            "/pause"                 16 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39643
+451741b4e4db   k8s.gcr.io/pause:3.5                            "/pause"                 17 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39642
+bea1df75fd40   k8s.gcr.io/pause:3.5                            "/pause"                 18 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39641
+f998c2c4dcc6   k8s.gcr.io/pause:3.5                            "/pause"                 19 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39640
+44aab76002e6   k8s.gcr.io/pause:3.5                            "/pause"                 20 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39639
+ef58264d357f   k8s.gcr.io/pause:3.5                            "/pause"                 21 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39638
+ffb20a4e100a   k8s.gcr.io/pause:3.5                            "/pause"                 22 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39637
+e2cbcc3f4fde   k8s.gcr.io/pause:3.5                            "/pause"                 23 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39636
+4e6d01dc3691   k8s.gcr.io/pause:3.5                            "/pause"                 24 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39635
+960f640228ce   k8s.gcr.io/pause:3.5                            "/pause"                 25 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39634
+25aa97b88cc8   k8s.gcr.io/pause:3.5                            "/pause"                 26 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39633
+3472119bd736   k8s.gcr.io/pause:3.5                            "/pause"                 27 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39632
+ad1ac63d8eda   k8s.gcr.io/pause:3.5                            "/pause"                 28 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39631
+0db7cf1ea9ea   k8s.gcr.io/pause:3.5                            "/pause"                 29 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39630
+ad530d07cebc   k8s.gcr.io/pause:3.5                            "/pause"                 30 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39629
+690736817bf2   k8s.gcr.io/pause:3.5                            "/pause"                 31 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39628
+229b336228e4   k8s.gcr.io/pause:3.5                            "/pause"                 32 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39627
+5b9d390dd8fd   k8s.gcr.io/pause:3.5                            "/pause"                 34 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39626
+37b0c8717068   k8s.gcr.io/pause:3.5                            "/pause"                 36 seconds ago   Created                             k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39625
+1485c502a30d   nginx                                           "nginx -g 'daemon of…"   44 minutes ago   Up 44 minutes                       k8s_nginx_nginx-67dff5cc7f-z7f6c_default_022b8a53-be44-434b-a993-04580e1da214_0
+ebddbd5f347e   k8s.gcr.io/pause:3.5                            "/pause"                 44 minutes ago   Up 44 minutes                       k8s_POD_nginx-67dff5cc7f-z7f6c_default_022b8a53-be44-434b-a993-04580e1da214_0
+e3ae7e50320c   k8s.gcr.io/metrics-server/metrics-server        "/metrics-server --c…"   52 minutes ago   Up 52 minutes                       k8s_metrics-server_metrics-server-77c99ccb96-gg79p_kube-system_80544749-cbfc-4784-87c7-309a63dc748d_0
+940f1abd65b4   k8s.gcr.io/pause:3.5                            "/pause"                 52 minutes ago   Up 52 minutes                       k8s_POD_metrics-server-77c99ccb96-gg79p_kube-system_80544749-cbfc-4784-87c7-309a63dc748d_0
+6e4e21a3a290   gcr.io/google-samples/hello-app                 "./hello-app"            12 hours ago     Up 12 hours                         k8s_hello-app_web-79d88c97d6-4dgcm_default_12a2e2e9-a7ce-43c4-b68c-c0216c989b6d_0
+072a86d1997c   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_web-79d88c97d6-4dgcm_default_12a2e2e9-a7ce-43c4-b68c-c0216c989b6d_0
+c07faa914e94   swara1214/frontend_engine                       "docker-entrypoint.s…"   12 hours ago     Up 12 hours                         k8s_vue-deployment_vue-deployment-5567767dc9-9w2qj_default_bea4b160-b8e8-44e7-9449-8c99e2375c0a_0
+a0da520cd978   swara1214/backend_engine                        "python manage.py ru…"   12 hours ago     Up 12 hours                         k8s_django-deployment_django-deployment-6c96774d45-vxvb6_default_f46d6fcd-bf51-4080-9dae-ae0d1f0caa25_0
+7dd811fb189f   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_vue-deployment-5567767dc9-9w2qj_default_bea4b160-b8e8-44e7-9449-8c99e2375c0a_0
+b8b9ab79b706   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_django-deployment-6c96774d45-vxvb6_default_f46d6fcd-bf51-4080-9dae-ae0d1f0caa25_0
+c7add9c6c769   c41e9fcadf5a                                    "/kube-webhook-certg…"   12 hours ago     Exited (0) 12 hours ago             k8s_patch_ingress-nginx-admission-patch--1-rz884_ingress-nginx_945a4c51-7f9b-4779-8f7f-67fb5baf2770_1
+6b69eac062a0   k8s.gcr.io/ingress-nginx/kube-webhook-certgen   "/kube-webhook-certg…"   12 hours ago     Exited (0) 12 hours ago             k8s_create_ingress-nginx-admission-create--1-r6jb2_ingress-nginx_0bc0da21-9b72-4b96-8951-1d0f7ef25b09_0
+570c7e8a8ba9   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Exited (0) 12 hours ago             k8s_POD_ingress-nginx-admission-patch--1-rz884_ingress-nginx_945a4c51-7f9b-4779-8f7f-67fb5baf2770_0
+c5a0a21daf5c   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Exited (0) 12 hours ago             k8s_POD_ingress-nginx-admission-create--1-r6jb2_ingress-nginx_0bc0da21-9b72-4b96-8951-1d0f7ef25b09_0
+0b67fc5b8823   gcr.io/k8s-minikube/storage-provisioner         "/storage-provisioner"   12 hours ago     Up 12 hours                         k8s_storage-provisioner_storage-provisioner_kube-system_349f5b69-4225-4f87-bda6-1a51575bb330_0
+1067646ff11e   8d147537fb7d                                    "/coredns -conf /etc…"   12 hours ago     Up 12 hours                         k8s_coredns_coredns-78fcd69978-4trmv_kube-system_a7d23d3b-0037-4a49-b413-b7e3bb160ee1_0
+bfbea50120ee   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_coredns-78fcd69978-4trmv_kube-system_a7d23d3b-0037-4a49-b413-b7e3bb160ee1_0
+af3ff3bdafee   6120bd723dce                                    "/usr/local/bin/kube…"   12 hours ago     Up 12 hours                         k8s_kube-proxy_kube-proxy-kghq6_kube-system_5d593b0b-d86a-48c0-ad6a-faebb22db879_0
+ff8ed54a297b   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_kube-proxy-kghq6_kube-system_5d593b0b-d86a-48c0-ad6a-faebb22db879_0
+486e901682c7   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_storage-provisioner_kube-system_349f5b69-4225-4f87-bda6-1a51575bb330_0
+992fd4017517   05c905cef780                                    "kube-controller-man…"   12 hours ago     Up 12 hours                         k8s_kube-controller-manager_kube-controller-manager-jiowebosci1_kube-system_e0eef6c8d45988c2931fc60b6986e7ab_0
+ab1a7edf4d6e   004811815584                                    "etcd --advertise-cl…"   12 hours ago     Up 12 hours                         k8s_etcd_etcd-jiowebosci1_kube-system_8e927261bc4a65e45823475cec988ca9_0
+66ef7bd8fd18   53224b502ea4                                    "kube-apiserver --ad…"   12 hours ago     Up 12 hours                         k8s_kube-apiserver_kube-apiserver-jiowebosci1_kube-system_a520866fc53a3f0ddebbbea5a920d030_0
+012af354a805   0aa9c7e31d30                                    "kube-scheduler --au…"   12 hours ago     Up 12 hours                         k8s_kube-scheduler_kube-scheduler-jiowebosci1_kube-system_d16a498645ffe0eb637f6263eb5b9a58_0
+8931abab81f4   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_kube-controller-manager-jiowebosci1_kube-system_e0eef6c8d45988c2931fc60b6986e7ab_0
+161746de245f   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_kube-apiserver-jiowebosci1_kube-system_a520866fc53a3f0ddebbbea5a920d030_0
+5671c5f69301   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_etcd-jiowebosci1_kube-system_8e927261bc4a65e45823475cec988ca9_0
+32ace79476a4   k8s.gcr.io/pause:3.5                            "/pause"                 12 hours ago     Up 12 hours                         k8s_POD_kube-scheduler-jiowebosci1_kube-system_d16a498645ffe0eb637f6263eb5b9a58_0
+62c3e24b81c9   django-v1                                       "python manage.py ru…"   3 days ago       Exited (0) 2 days ago               django-c
+da9ead55e6dc   6c7c6e3f63e7                                    "/bin/sh -c 'pip ins…"   3 days ago       Exited (1) 3 days ago               infallible_wozniak
+158436f711e1   3d552823a89c                                    "/bin/sh -c 'apt-get…"   3 days ago       Exited (1) 3 days ago               strange_ride
+7d2596bfe435   b5c49e1a0c14                                    "/bin/sh -c 'apt-get…"   3 days ago       Exited (100) 3 days ago             pensive_hypatia
+
+* 
+* ==> coredns [1067646ff11e] <==
+* [INFO] plugin/ready: Still waiting on: "kubernetes"
+.:53
+[INFO] plugin/reload: Running configuration MD5 = 18bc9b0eddacfe7401a5dfa71defe13e
+CoreDNS-1.8.4
+linux/amd64, go1.16.4, 053c4d5
+
+* 
+* ==> describe nodes <==
+* Name:               jiowebosci1
+Roles:              control-plane,master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=jiowebosci1
+                    kubernetes.io/os=linux
+                    minikube.k8s.io/commit=76b94fb3c4e8ac5062daf70d60cf03ddcc0a741b
+                    minikube.k8s.io/name=minikube
+                    minikube.k8s.io/updated_at=2022_01_14T23_12_20_0700
+                    minikube.k8s.io/version=v1.24.0
+                    node-role.kubernetes.io/control-plane=
+                    node-role.kubernetes.io/master=
+                    node.kubernetes.io/exclude-from-external-load-balancers=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 14 Jan 2022 23:12:16 +0530
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  jiowebosci1
+  AcquireTime:     <unset>
+  RenewTime:       Sat, 15 Jan 2022 11:18:57 +0530
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Sat, 15 Jan 2022 11:15:19 +0530   Fri, 14 Jan 2022 23:12:12 +0530   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Sat, 15 Jan 2022 11:15:19 +0530   Fri, 14 Jan 2022 23:12:12 +0530   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Sat, 15 Jan 2022 11:15:19 +0530   Fri, 14 Jan 2022 23:12:12 +0530   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Sat, 15 Jan 2022 11:15:19 +0530   Fri, 14 Jan 2022 23:12:31 +0530   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  172.26.0.53
+  Hostname:    jiowebosci1
+Capacity:
+  cpu:                20
+  ephemeral-storage:  40815176Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             49437932Ki
+  pods:               110
+Allocatable:
+  cpu:                20
+  ephemeral-storage:  40815176Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             49437932Ki
+  pods:               110
+System Info:
+  Machine ID:                 6cb0155bc3b8f2572cc0da765fededc8
+  System UUID:                1174E0F0-0CAC-94E6-7527-37EC212E4637
+  Boot ID:                    b5c3ebdb-962b-41fe-9dcb-f640b35ccfdc
+  Kernel Version:             4.4.0-204-generic
+  OS Image:                   Ubuntu 16.04.7 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://20.10.7
+  Kubelet Version:            v1.22.3
+  Kube-Proxy Version:         v1.22.3
+PodCIDR:                      10.244.0.0/24
+PodCIDRs:                     10.244.0.0/24
+Non-terminated Pods:          (13 in total)
+  Namespace                   Name                                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                         ------------  ----------  ---------------  -------------  ---
+  default                     django-deployment-6c96774d45-vxvb6           0 (0%!)(MISSING)        0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         11h
+  default                     nginx-67dff5cc7f-z7f6c                       100m (0%!)(MISSING)     0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         44m
+  default                     vue-deployment-5567767dc9-9w2qj              0 (0%!)(MISSING)        0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         11h
+  default                     web-79d88c97d6-4dgcm                         0 (0%!)(MISSING)        0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         11h
+  ingress-nginx               ingress-nginx-controller-5f66978484-88t6t    100m (0%!)(MISSING)     0 (0%!)(MISSING)      90Mi (0%!)(MISSING)        0 (0%!)(MISSING)         12h
+  kube-system                 coredns-78fcd69978-4trmv                     100m (0%!)(MISSING)     0 (0%!)(MISSING)      70Mi (0%!)(MISSING)        170Mi (0%!)(MISSING)     12h
+  kube-system                 etcd-jiowebosci1                             100m (0%!)(MISSING)     0 (0%!)(MISSING)      100Mi (0%!)(MISSING)       0 (0%!)(MISSING)         12h
+  kube-system                 kube-apiserver-jiowebosci1                   250m (1%!)(MISSING)     0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         12h
+  kube-system                 kube-controller-manager-jiowebosci1          200m (1%!)(MISSING)     0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         12h
+  kube-system                 kube-proxy-kghq6                             0 (0%!)(MISSING)        0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         12h
+  kube-system                 kube-scheduler-jiowebosci1                   100m (0%!)(MISSING)     0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         12h
+  kube-system                 metrics-server-77c99ccb96-gg79p              100m (0%!)(MISSING)     0 (0%!)(MISSING)      300Mi (0%!)(MISSING)       0 (0%!)(MISSING)         52m
+  kube-system                 storage-provisioner                          0 (0%!)(MISSING)        0 (0%!)(MISSING)      0 (0%!)(MISSING)           0 (0%!)(MISSING)         12h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                1050m (5%!)(MISSING)  0 (0%!)(MISSING)
+  memory             560Mi (1%!)(MISSING)  170Mi (0%!)(MISSING)
+  ephemeral-storage  0 (0%!)(MISSING)      0 (0%!)(MISSING)
+  hugepages-1Gi      0 (0%!)(MISSING)      0 (0%!)(MISSING)
+  hugepages-2Mi      0 (0%!)(MISSING)      0 (0%!)(MISSING)
+Events:              <none>
+
+* 
+* ==> dmesg <==
+* 
+* 
+* ==> etcd [ab1a7edf4d6e] <==
+* {"level":"warn","ts":"2022-01-15T04:56:06.194Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"155.910351ms","expected-duration":"100ms","prefix":"","request":"header:<ID:18294886509935220978 username:\"kube-apiserver-etcd-client\" auth_revision:1 > txn:<compare:<target:MOD key:\"/registry/endpointslices/kube-system/metrics-server-4qlgw\" mod_revision:29168 > success:<request_put:<key:\"/registry/endpointslices/kube-system/metrics-server-4qlgw\" value_size:1032 >> failure:<request_range:<key:\"/registry/endpointslices/kube-system/metrics-server-4qlgw\" > >>","response":"size:18"}
+{"level":"info","ts":"2022-01-15T04:56:06.195Z","caller":"traceutil/trace.go:171","msg":"trace[301695108] transaction","detail":"{read_only:false; response_revision:29169; number_of_response:1; }","duration":"393.222375ms","start":"2022-01-15T04:56:05.802Z","end":"2022-01-15T04:56:06.195Z","steps":["trace[301695108] 'process raft request'  (duration: 236.92691ms)","trace[301695108] 'compare'  (duration: 155.663277ms)"],"step_count":2}
+{"level":"info","ts":"2022-01-15T04:56:06.195Z","caller":"traceutil/trace.go:171","msg":"trace[1982687273] linearizableReadLoop","detail":"{readStateIndex:37718; appliedIndex:37715; }","duration":"323.425816ms","start":"2022-01-15T04:56:05.871Z","end":"2022-01-15T04:56:06.195Z","steps":["trace[1982687273] 'read index received'  (duration: 166.716397ms)","trace[1982687273] 'applied index is now lower than readState.Index'  (duration: 156.701872ms)"],"step_count":2}
+{"level":"info","ts":"2022-01-15T04:56:06.195Z","caller":"traceutil/trace.go:171","msg":"trace[1861866001] transaction","detail":"{read_only:false; response_revision:29170; number_of_response:1; }","duration":"393.158025ms","start":"2022-01-15T04:56:05.802Z","end":"2022-01-15T04:56:06.195Z","steps":["trace[1861866001] 'process raft request'  (duration: 392.927433ms)"],"step_count":1}
+{"level":"info","ts":"2022-01-15T04:56:06.195Z","caller":"traceutil/trace.go:171","msg":"trace[1693220058] transaction","detail":"{read_only:false; response_revision:29171; number_of_response:1; }","duration":"392.720796ms","start":"2022-01-15T04:56:05.802Z","end":"2022-01-15T04:56:06.195Z","steps":["trace[1693220058] 'process raft request'  (duration: 392.482569ms)"],"step_count":1}
+{"level":"warn","ts":"2022-01-15T04:56:06.195Z","caller":"v3rpc/interceptor.go:197","msg":"request stats","start time":"2022-01-15T04:56:05.801Z","time spent":"393.398856ms","remote":"127.0.0.1:33132","response type":"/etcdserverpb.KV/Txn","request count":1,"request size":1097,"response count":0,"response size":41,"request content":"compare:<target:MOD key:\"/registry/endpointslices/kube-system/metrics-server-4qlgw\" mod_revision:29168 > success:<request_put:<key:\"/registry/endpointslices/kube-system/metrics-server-4qlgw\" value_size:1032 >> failure:<request_range:<key:\"/registry/endpointslices/kube-system/metrics-server-4qlgw\" > >"}
+{"level":"warn","ts":"2022-01-15T04:56:06.195Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"323.684649ms","expected-duration":"100ms","prefix":"read-only range ","request":"key:\"/registry/deployments/kube-system/metrics-server\" ","response":"range_response_count:1 size:5053"}
+{"level":"warn","ts":"2022-01-15T04:56:06.195Z","caller":"v3rpc/interceptor.go:197","msg":"request stats","start time":"2022-01-15T04:56:05.802Z","time spent":"393.398934ms","remote":"127.0.0.1:33072","response type":"/etcdserverpb.KV/Txn","request count":1,"request size":689,"response count":0,"response size":41,"request content":"compare:<target:MOD key:\"/registry/events/kube-system/metrics-server-77c99ccb96.16ca58b904822cc7\" mod_revision:0 > success:<request_put:<key:\"/registry/events/kube-system/metrics-server-77c99ccb96.16ca58b904822cc7\" value_size:600 lease:9071514473080445163 >> failure:<>"}
+{"level":"info","ts":"2022-01-15T04:56:06.195Z","caller":"traceutil/trace.go:171","msg":"trace[1494306035] range","detail":"{range_begin:/registry/deployments/kube-system/metrics-server; range_end:; response_count:1; response_revision:29171; }","duration":"323.744707ms","start":"2022-01-15T04:56:05.871Z","end":"2022-01-15T04:56:06.195Z","steps":["trace[1494306035] 'agreement among raft nodes before linearized reading'  (duration: 323.627112ms)"],"step_count":1}
+{"level":"warn","ts":"2022-01-15T04:56:06.195Z","caller":"v3rpc/interceptor.go:197","msg":"request stats","start time":"2022-01-15T04:56:05.802Z","time spent":"392.850181ms","remote":"127.0.0.1:33206","response type":"/etcdserverpb.KV/Txn","request count":1,"request size":3250,"response count":0,"response size":41,"request content":"compare:<target:MOD key:\"/registry/replicasets/kube-system/metrics-server-77c99ccb96\" mod_revision:29164 > success:<request_put:<key:\"/registry/replicasets/kube-system/metrics-server-77c99ccb96\" value_size:3183 >> failure:<request_range:<key:\"/registry/replicasets/kube-system/metrics-server-77c99ccb96\" > >"}
+{"level":"warn","ts":"2022-01-15T04:56:06.195Z","caller":"v3rpc/interceptor.go:197","msg":"request stats","start time":"2022-01-15T04:56:05.871Z","time spent":"323.828932ms","remote":"127.0.0.1:33200","response type":"/etcdserverpb.KV/Range","request count":0,"request size":50,"response count":1,"response size":5076,"request content":"key:\"/registry/deployments/kube-system/metrics-server\" "}
+{"level":"info","ts":"2022-01-15T04:56:06.420Z","caller":"traceutil/trace.go:171","msg":"trace[45854850] linearizableReadLoop","detail":"{readStateIndex:37719; appliedIndex:37719; }","duration":"169.827266ms","start":"2022-01-15T04:56:06.250Z","end":"2022-01-15T04:56:06.420Z","steps":["trace[45854850] 'read index received'  (duration: 169.804854ms)","trace[45854850] 'applied index is now lower than readState.Index'  (duration: 14.301µs)"],"step_count":2}
+{"level":"warn","ts":"2022-01-15T04:56:06.516Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"266.009213ms","expected-duration":"100ms","prefix":"read-only range ","request":"key:\"/registry/health\" ","response":"range_response_count:0 size:6"}
+{"level":"info","ts":"2022-01-15T04:56:06.516Z","caller":"traceutil/trace.go:171","msg":"trace[78361423] range","detail":"{range_begin:/registry/health; range_end:; response_count:0; response_revision:29172; }","duration":"266.154357ms","start":"2022-01-15T04:56:06.250Z","end":"2022-01-15T04:56:06.516Z","steps":["trace[78361423] 'agreement among raft nodes before linearized reading'  (duration: 170.056281ms)","trace[78361423] 'range keys from in-memory index tree'  (duration: 95.914159ms)"],"step_count":2}
+{"level":"info","ts":"2022-01-15T04:56:06.516Z","caller":"traceutil/trace.go:171","msg":"trace[1554911759] transaction","detail":"{read_only:false; response_revision:29173; number_of_response:1; }","duration":"148.843101ms","start":"2022-01-15T04:56:06.367Z","end":"2022-01-15T04:56:06.516Z","steps":["trace[1554911759] 'process raft request'  (duration: 52.554653ms)","trace[1554911759] 'compare'  (duration: 96.08927ms)"],"step_count":2}
+{"level":"warn","ts":"2022-01-15T04:56:22.578Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"117.227255ms","expected-duration":"100ms","prefix":"","request":"header:<ID:18294886509935221094 username:\"kube-apiserver-etcd-client\" auth_revision:1 > txn:<compare:<target:MOD key:\"/registry/leases/kube-node-lease/jiowebosci1\" mod_revision:29181 > success:<request_put:<key:\"/registry/leases/kube-node-lease/jiowebosci1\" value_size:483 >> failure:<request_range:<key:\"/registry/leases/kube-node-lease/jiowebosci1\" > >>","response":"size:18"}
+{"level":"info","ts":"2022-01-15T04:56:22.578Z","caller":"traceutil/trace.go:171","msg":"trace[1982082559] transaction","detail":"{read_only:false; response_revision:29196; number_of_response:1; }","duration":"119.627501ms","start":"2022-01-15T04:56:22.459Z","end":"2022-01-15T04:56:22.578Z","steps":["trace[1982082559] 'compare'  (duration: 117.036082ms)"],"step_count":1}
+{"level":"info","ts":"2022-01-15T04:56:22.639Z","caller":"traceutil/trace.go:171","msg":"trace[127762141] transaction","detail":"{read_only:false; response_revision:29197; number_of_response:1; }","duration":"137.300046ms","start":"2022-01-15T04:56:22.502Z","end":"2022-01-15T04:56:22.639Z","steps":["trace[127762141] 'process raft request'  (duration: 137.094395ms)"],"step_count":1}
+{"level":"info","ts":"2022-01-15T04:57:14.610Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":28981}
+{"level":"info","ts":"2022-01-15T04:57:14.612Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":28981,"took":"927.265µs"}
+{"level":"info","ts":"2022-01-15T05:02:14.615Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":29243}
+{"level":"info","ts":"2022-01-15T05:02:14.617Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":29243,"took":"1.04739ms"}
+{"level":"info","ts":"2022-01-15T05:02:17.600Z","caller":"traceutil/trace.go:171","msg":"trace[1657567061] linearizableReadLoop","detail":"{readStateIndex:38083; appliedIndex:38083; }","duration":"349.499841ms","start":"2022-01-15T05:02:17.250Z","end":"2022-01-15T05:02:17.600Z","steps":["trace[1657567061] 'read index received'  (duration: 349.475558ms)","trace[1657567061] 'applied index is now lower than readState.Index'  (duration: 14.711µs)"],"step_count":2}
+{"level":"warn","ts":"2022-01-15T05:02:17.650Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"400.036083ms","expected-duration":"100ms","prefix":"read-only range ","request":"key:\"/registry/health\" ","response":"range_response_count:0 size:6"}
+{"level":"info","ts":"2022-01-15T05:02:17.650Z","caller":"traceutil/trace.go:171","msg":"trace[720798973] range","detail":"{range_begin:/registry/health; range_end:; response_count:0; response_revision:29456; }","duration":"400.18682ms","start":"2022-01-15T05:02:17.250Z","end":"2022-01-15T05:02:17.650Z","steps":["trace[720798973] 'agreement among raft nodes before linearized reading'  (duration: 349.712306ms)","trace[720798973] 'range keys from in-memory index tree'  (duration: 50.285999ms)"],"step_count":2}
+{"level":"warn","ts":"2022-01-15T05:02:17.650Z","caller":"v3rpc/interceptor.go:197","msg":"request stats","start time":"2022-01-15T05:02:17.250Z","time spent":"400.285592ms","remote":"127.0.0.1:33164","response type":"/etcdserverpb.KV/Range","request count":0,"request size":18,"response count":0,"response size":29,"request content":"key:\"/registry/health\" "}
+{"level":"info","ts":"2022-01-15T05:07:14.621Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":29454}
+{"level":"info","ts":"2022-01-15T05:07:14.623Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":29454,"took":"915.569µs"}
+{"level":"info","ts":"2022-01-15T05:12:14.626Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":29700}
+{"level":"info","ts":"2022-01-15T05:12:14.628Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":29700,"took":"920.765µs"}
+{"level":"warn","ts":"2022-01-15T05:14:11.970Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"128.428185ms","expected-duration":"100ms","prefix":"","request":"header:<ID:18294886509935226602 username:\"kube-apiserver-etcd-client\" auth_revision:1 > txn:<compare:<target:MOD key:\"/registry/masterleases/172.26.0.53\" mod_revision:30101 > success:<request_put:<key:\"/registry/masterleases/172.26.0.53\" value_size:67 lease:9071514473080450792 >> failure:<request_range:<key:\"/registry/masterleases/172.26.0.53\" > >>","response":"size:18"}
+{"level":"info","ts":"2022-01-15T05:14:11.970Z","caller":"traceutil/trace.go:171","msg":"trace[471307875] transaction","detail":"{read_only:false; response_revision:30108; number_of_response:1; }","duration":"215.188431ms","start":"2022-01-15T05:14:11.755Z","end":"2022-01-15T05:14:11.970Z","steps":["trace[471307875] 'process raft request'  (duration: 86.478948ms)","trace[471307875] 'compare'  (duration: 128.252665ms)"],"step_count":2}
+{"level":"info","ts":"2022-01-15T05:17:14.632Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":30026}
+{"level":"info","ts":"2022-01-15T05:17:14.633Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":30026,"took":"1.183004ms"}
+{"level":"info","ts":"2022-01-15T05:22:14.638Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":30317}
+{"level":"info","ts":"2022-01-15T05:22:14.640Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":30317,"took":"1.218403ms"}
+{"level":"warn","ts":"2022-01-15T05:24:37.723Z","caller":"etcdserver/v3_server.go:815","msg":"waiting for ReadIndex response took too long, retrying","sent-request-id":18294886509935229653,"retry-timeout":"500ms"}
+{"level":"info","ts":"2022-01-15T05:24:38.005Z","caller":"traceutil/trace.go:171","msg":"trace[1019934542] linearizableReadLoop","detail":"{readStateIndex:39549; appliedIndex:39549; }","duration":"782.928892ms","start":"2022-01-15T05:24:37.222Z","end":"2022-01-15T05:24:38.005Z","steps":["trace[1019934542] 'read index received'  (duration: 782.9041ms)","trace[1019934542] 'applied index is now lower than readState.Index'  (duration: 15.706µs)"],"step_count":2}
+{"level":"warn","ts":"2022-01-15T05:24:38.005Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"753.520006ms","expected-duration":"100ms","prefix":"read-only range ","request":"key:\"/registry/health\" ","response":"range_response_count:0 size:6"}
+{"level":"warn","ts":"2022-01-15T05:24:38.005Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"783.471053ms","expected-duration":"100ms","prefix":"read-only range ","request":"key:\"/registry/clusterroles/\" range_end:\"/registry/clusterroles0\" count_only:true ","response":"range_response_count:0 size:8"}
+{"level":"warn","ts":"2022-01-15T05:24:38.005Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"620.387438ms","expected-duration":"100ms","prefix":"read-only range ","request":"key:\"/registry/controllers/\" range_end:\"/registry/controllers0\" count_only:true ","response":"range_response_count:0 size:6"}
+{"level":"info","ts":"2022-01-15T05:24:38.006Z","caller":"traceutil/trace.go:171","msg":"trace[536011775] range","detail":"{range_begin:/registry/clusterroles/; range_end:/registry/clusterroles0; response_count:0; response_revision:30629; }","duration":"783.616468ms","start":"2022-01-15T05:24:37.222Z","end":"2022-01-15T05:24:38.006Z","steps":["trace[536011775] 'agreement among raft nodes before linearized reading'  (duration: 783.206398ms)"],"step_count":1}
+{"level":"info","ts":"2022-01-15T05:24:38.006Z","caller":"traceutil/trace.go:171","msg":"trace[510840386] range","detail":"{range_begin:/registry/controllers/; range_end:/registry/controllers0; response_count:0; response_revision:30629; }","duration":"620.520631ms","start":"2022-01-15T05:24:37.385Z","end":"2022-01-15T05:24:38.006Z","steps":["trace[510840386] 'agreement among raft nodes before linearized reading'  (duration: 620.330078ms)"],"step_count":1}
+{"level":"warn","ts":"2022-01-15T05:24:38.006Z","caller":"v3rpc/interceptor.go:197","msg":"request stats","start time":"2022-01-15T05:24:37.222Z","time spent":"783.742543ms","remote":"127.0.0.1:33170","response type":"/etcdserverpb.KV/Range","request count":0,"request size":52,"response count":68,"response size":31,"request content":"key:\"/registry/clusterroles/\" range_end:\"/registry/clusterroles0\" count_only:true "}
+{"level":"warn","ts":"2022-01-15T05:24:38.006Z","caller":"v3rpc/interceptor.go:197","msg":"request stats","start time":"2022-01-15T05:24:37.385Z","time spent":"620.633851ms","remote":"127.0.0.1:33102","response type":"/etcdserverpb.KV/Range","request count":0,"request size":50,"response count":0,"response size":29,"request content":"key:\"/registry/controllers/\" range_end:\"/registry/controllers0\" count_only:true "}
+{"level":"info","ts":"2022-01-15T05:24:38.005Z","caller":"traceutil/trace.go:171","msg":"trace[2122019670] range","detail":"{range_begin:/registry/health; range_end:; response_count:0; response_revision:30629; }","duration":"753.655481ms","start":"2022-01-15T05:24:37.252Z","end":"2022-01-15T05:24:38.005Z","steps":["trace[2122019670] 'agreement among raft nodes before linearized reading'  (duration: 753.453059ms)"],"step_count":1}
+{"level":"warn","ts":"2022-01-15T05:24:38.006Z","caller":"v3rpc/interceptor.go:197","msg":"request stats","start time":"2022-01-15T05:24:37.252Z","time spent":"754.002854ms","remote":"127.0.0.1:33164","response type":"/etcdserverpb.KV/Range","request count":0,"request size":18,"response count":0,"response size":29,"request content":"key:\"/registry/health\" "}
+{"level":"info","ts":"2022-01-15T05:27:14.643Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":30529}
+{"level":"info","ts":"2022-01-15T05:27:14.645Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":30529,"took":"916.527µs"}
+{"level":"info","ts":"2022-01-15T05:32:14.649Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":30741}
+{"level":"info","ts":"2022-01-15T05:32:14.651Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":30741,"took":"1.171719ms"}
+{"level":"info","ts":"2022-01-15T05:32:50.499Z","caller":"etcdserver/server.go:1368","msg":"triggering snapshot","local-member-id":"9ac2816ddc2efde4","local-member-applied-index":40004,"local-member-snapshot-index":30003,"local-member-snapshot-count":10000}
+{"level":"info","ts":"2022-01-15T05:32:50.738Z","caller":"etcdserver/server.go:2363","msg":"saved snapshot","snapshot-index":40004}
+{"level":"info","ts":"2022-01-15T05:32:50.738Z","caller":"etcdserver/server.go:2393","msg":"compacted Raft logs","compact-index":35004}
+{"level":"info","ts":"2022-01-15T05:37:14.654Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":30952}
+{"level":"info","ts":"2022-01-15T05:37:14.656Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":30952,"took":"1.008424ms"}
+{"level":"info","ts":"2022-01-15T05:42:14.660Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":31164}
+{"level":"info","ts":"2022-01-15T05:42:14.661Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":31164,"took":"931.312µs"}
+{"level":"info","ts":"2022-01-15T05:47:14.666Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":31375}
+{"level":"info","ts":"2022-01-15T05:47:14.667Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":31375,"took":"1.047732ms"}
+
+* 
+* ==> kernel <==
+*  11:18:58 up 1 day, 36 min,  2 users,  load average: 2.32, 1.63, 1.37
+Linux jiowebosci1 4.4.0-204-generic #236-Ubuntu SMP Fri Feb 19 16:11:27 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+
+* 
+* ==> kube-apiserver [66ef7bd8fd18] <==
+* Trace[1330286071]: [1.001996836s] [1.001996836s] END
+I0114 20:50:25.747244       1 trace.go:205] Trace[247761437]: "Get" url:/api/v1/namespaces/kube-system/endpoints/k8s.io-minikube-hostpath,user-agent:storage-provisioner/v0.0.0 (linux/amd64) kubernetes/$Format,audit-id:b547f411-5712-4099-b806-0ec4d534770e,client:172.26.0.53,accept:application/json, */*,protocol:HTTP/2.0 (14-Jan-2022 20:50:25.103) (total time: 643ms):
+Trace[247761437]: ---"About to write a response" 643ms (20:50:25.747)
+Trace[247761437]: [643.935801ms] [643.935801ms] END
+I0115 00:55:31.424119       1 trace.go:205] Trace[135971827]: "GuaranteedUpdate etcd3" type:*v1.Endpoints (15-Jan-2022 00:55:30.753) (total time: 670ms):
+Trace[135971827]: ---"Transaction committed" 667ms (00:55:31.423)
+Trace[135971827]: [670.170466ms] [670.170466ms] END
+I0115 01:02:21.719615       1 trace.go:205] Trace[170834787]: "GuaranteedUpdate etcd3" type:*v1.Endpoints (15-Jan-2022 01:02:20.782) (total time: 936ms):
+Trace[170834787]: ---"Transaction committed" 933ms (01:02:21.719)
+Trace[170834787]: [936.90069ms] [936.90069ms] END
+I0115 01:27:03.887879       1 controller.go:611] quota admission added evaluator for: horizontalpodautoscalers.autoscaling
+I0115 03:57:15.108629       1 trace.go:205] Trace[303431344]: "GuaranteedUpdate etcd3" type:*core.Endpoints (15-Jan-2022 03:57:14.460) (total time: 648ms):
+Trace[303431344]: ---"Transaction committed" 647ms (03:57:15.108)
+Trace[303431344]: [648.501641ms] [648.501641ms] END
+I0115 03:57:15.108979       1 trace.go:205] Trace[1214192846]: "Update" url:/api/v1/namespaces/kube-system/endpoints/k8s.io-minikube-hostpath,user-agent:storage-provisioner/v0.0.0 (linux/amd64) kubernetes/$Format,audit-id:301b5d34-7eaf-4309-babd-67d036112314,client:172.26.0.53,accept:application/json, */*,protocol:HTTP/2.0 (15-Jan-2022 03:57:14.459) (total time: 649ms):
+Trace[1214192846]: ---"Object stored in database" 648ms (03:57:15.108)
+Trace[1214192846]: [649.198837ms] [649.198837ms] END
+I0115 04:06:45.862652       1 trace.go:205] Trace[1059909905]: "Create" url:/api/v1/namespaces/ingress-nginx/serviceaccounts/ingress-nginx/token,user-agent:kubelet/v1.22.3 (linux/amd64) kubernetes/c920368,audit-id:42d707de-57a3-4507-8ce3-dac7632e3da8,client:172.26.0.53,accept:application/vnd.kubernetes.protobuf,application/json,protocol:HTTP/2.0 (15-Jan-2022 04:06:44.843) (total time: 969ms):
+Trace[1059909905]: ---"Object stored in database" 807ms (04:06:45.801)
+Trace[1059909905]: [969.29721ms] [969.29721ms] END
+I0115 04:56:01.643549       1 trace.go:205] Trace[74298304]: "Create" url:/apis/apps/v1/namespaces/kube-system/deployments,user-agent:kubectl/v1.22.3 (linux/amd64) kubernetes/c920368,audit-id:814ceb00-93dc-4b71-8ee3-6ba4c9799d1f,client:::1,accept:application/json,protocol:HTTP/2.0 (15-Jan-2022 04:56:00.314) (total time: 1192ms):
+Trace[74298304]: ---"Object stored in database" 1101ms (04:56:01.506)
+Trace[74298304]: [1.192376911s] [1.192376911s] END
+I0115 04:56:04.397900       1 trace.go:205] Trace[1804542247]: "GuaranteedUpdate etcd3" type:*rbac.ClusterRole (15-Jan-2022 04:56:03.514) (total time: 883ms):
+Trace[1804542247]: ---"Transaction prepared" 527ms (04:56:04.041)
+Trace[1804542247]: ---"Transaction committed" 355ms (04:56:04.397)
+Trace[1804542247]: [883.522424ms] [883.522424ms] END
+I0115 04:56:04.398252       1 trace.go:205] Trace[2059477703]: "Patch" url:/apis/rbac.authorization.k8s.io/v1/clusterroles/edit,user-agent:kube-controller-manager/v1.22.3 (linux/amd64) kubernetes/c920368/system:serviceaccount:kube-system:clusterrole-aggregation-controller,audit-id:38892197-ac57-4f22-a895-c16dfbc26a0f,client:172.26.0.53,accept:application/vnd.kubernetes.protobuf, */*,protocol:HTTP/2.0 (15-Jan-2022 04:56:03.406) (total time: 991ms):
+Trace[2059477703]: ---"About to apply patch" 107ms (04:56:03.514)
+Trace[2059477703]: ---"About to check admission control" 526ms (04:56:04.041)
+Trace[2059477703]: ---"Object stored in database" 356ms (04:56:04.397)
+Trace[2059477703]: [991.865467ms] [991.865467ms] END
+I0115 04:56:04.398317       1 trace.go:205] Trace[1017557140]: "GuaranteedUpdate etcd3" type:*rbac.ClusterRole (15-Jan-2022 04:56:03.514) (total time: 883ms):
+Trace[1017557140]: ---"Transaction prepared" 527ms (04:56:04.041)
+Trace[1017557140]: ---"Transaction committed" 356ms (04:56:04.398)
+Trace[1017557140]: [883.741287ms] [883.741287ms] END
+I0115 04:56:04.398347       1 trace.go:205] Trace[2101985758]: "GuaranteedUpdate etcd3" type:*rbac.ClusterRole (15-Jan-2022 04:56:03.514) (total time: 883ms):
+Trace[2101985758]: ---"Transaction prepared" 527ms (04:56:04.041)
+Trace[2101985758]: ---"Transaction committed" 356ms (04:56:04.398)
+Trace[2101985758]: [883.987669ms] [883.987669ms] END
+I0115 04:56:04.398657       1 trace.go:205] Trace[300501627]: "Patch" url:/apis/rbac.authorization.k8s.io/v1/clusterroles/view,user-agent:kube-controller-manager/v1.22.3 (linux/amd64) kubernetes/c920368/system:serviceaccount:kube-system:clusterrole-aggregation-controller,audit-id:af23526a-a400-45db-a4b2-624617371311,client:172.26.0.53,accept:application/vnd.kubernetes.protobuf, */*,protocol:HTTP/2.0 (15-Jan-2022 04:56:03.406) (total time: 991ms):
+Trace[300501627]: ---"About to apply patch" 107ms (04:56:03.514)
+Trace[300501627]: ---"About to check admission control" 526ms (04:56:04.040)
+Trace[300501627]: ---"Object stored in database" 357ms (04:56:04.398)
+Trace[300501627]: [991.706054ms] [991.706054ms] END
+I0115 04:56:04.398679       1 trace.go:205] Trace[1496564063]: "Patch" url:/apis/rbac.authorization.k8s.io/v1/clusterroles/admin,user-agent:kube-controller-manager/v1.22.3 (linux/amd64) kubernetes/c920368/system:serviceaccount:kube-system:clusterrole-aggregation-controller,audit-id:da3862f6-44e6-4b01-a312-c68769216b2c,client:172.26.0.53,accept:application/vnd.kubernetes.protobuf, */*,protocol:HTTP/2.0 (15-Jan-2022 04:56:03.406) (total time: 991ms):
+Trace[1496564063]: ---"About to apply patch" 107ms (04:56:03.514)
+Trace[1496564063]: ---"About to check admission control" 526ms (04:56:04.040)
+Trace[1496564063]: ---"Object stored in database" 357ms (04:56:04.398)
+Trace[1496564063]: [991.959762ms] [991.959762ms] END
+I0115 04:56:04.732075       1 trace.go:205] Trace[1395699380]: "GuaranteedUpdate etcd3" type:*core.ServiceAccount (15-Jan-2022 04:56:04.219) (total time: 512ms):
+Trace[1395699380]: ---"Transaction committed" 510ms (04:56:04.731)
+Trace[1395699380]: [512.215491ms] [512.215491ms] END
+I0115 04:56:04.732365       1 trace.go:205] Trace[1698417645]: "Update" url:/api/v1/namespaces/kube-system/serviceaccounts/metrics-server,user-agent:kube-controller-manager/v1.22.3 (linux/amd64) kubernetes/c920368/tokens-controller,audit-id:bb039a78-1953-4f35-ad1f-ee9ea8ee5c8c,client:172.26.0.53,accept:application/vnd.kubernetes.protobuf, */*,protocol:HTTP/2.0 (15-Jan-2022 04:56:04.219) (total time: 512ms):
+Trace[1698417645]: ---"Object stored in database" 512ms (04:56:04.732)
+Trace[1698417645]: [512.80726ms] [512.80726ms] END
+W0115 04:56:05.800401       1 handler_proxy.go:103] no RequestInfo found in the context
+E0115 04:56:05.972976       1 controller.go:116] loading OpenAPI spec for "v1beta1.metrics.k8s.io" failed with: failed to retrieve openAPI spec, http error: ResponseCode: 503, Body: service unavailable
+, Header: map[Content-Type:[text/plain; charset=utf-8] X-Content-Type-Options:[nosniff]]
+I0115 04:56:05.973056       1 controller.go:129] OpenAPI AggregationController: action for item v1beta1.metrics.k8s.io: Rate Limited Requeue.
+
+* 
+* ==> kube-controller-manager [992fd4017517] <==
+* E0115 05:44:04.307757       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:44:04.308007       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:44:04.308075       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:44:19.329376       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:44:19.329667       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:44:19.329740       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:44:34.364521       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:44:34.364741       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:44:34.364809       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:44:49.382537       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:44:49.382782       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:44:49.382838       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:45:04.417728       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:45:04.418077       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:45:04.418106       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:45:19.437744       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:45:19.438022       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:45:19.438106       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:45:34.472934       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:45:34.473298       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:45:34.473399       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:45:49.496204       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:45:49.496473       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:45:49.496518       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:46:04.532797       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:46:04.532969       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:46:04.532996       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:46:19.551497       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:46:19.551834       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:46:19.551911       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:46:34.589520       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:46:34.589791       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:46:34.589848       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:46:49.613611       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:46:49.613958       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:46:49.614019       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:47:04.645788       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:47:04.646068       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:47:04.646129       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:47:19.670208       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:47:19.670459       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:47:19.670535       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:47:34.701685       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:47:34.701986       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:47:34.702049       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:47:49.716498       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:47:49.716801       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:47:49.716856       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:48:04.753005       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:48:04.753259       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:48:04.753321       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:48:19.774785       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:48:19.775038       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:48:19.775104       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:48:34.810018       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:48:34.810289       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:48:34.810360       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+E0115 05:48:49.830723       1 horizontal.go:227] failed to compute desired number of replicas based on listed metrics for Deployment/default/vue-deployment: invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu
+I0115 05:48:49.831383       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedGetResourceMetric" message="failed to get cpu utilization: missing request for cpu"
+I0115 05:48:49.831521       1 event.go:291] "Event occurred" object="default/vue-deployment" kind="HorizontalPodAutoscaler" apiVersion="autoscaling/v2beta2" type="Warning" reason="FailedComputeMetricsReplicas" message="invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: missing request for cpu"
+
+* 
+* ==> kube-proxy [af3ff3bdafee] <==
+* I0114 17:42:34.368473       1 node.go:172] Successfully retrieved node IP: 172.26.0.53
+I0114 17:42:34.368546       1 server_others.go:140] Detected node IP 172.26.0.53
+W0114 17:42:34.368580       1 server_others.go:565] Unknown proxy mode "", assuming iptables proxy
+I0114 17:42:34.433493       1 server_others.go:206] kube-proxy running in dual-stack mode, IPv4-primary
+I0114 17:42:34.433561       1 server_others.go:212] Using iptables Proxier.
+I0114 17:42:34.433593       1 server_others.go:219] creating dualStackProxier for iptables.
+W0114 17:42:34.433620       1 server_others.go:495] detect-local-mode set to ClusterCIDR, but no IPv6 cluster CIDR defined, , defaulting to no-op detect-local for IPv6
+I0114 17:42:34.434617       1 server.go:649] Version: v1.22.3
+I0114 17:42:34.436453       1 config.go:315] Starting service config controller
+I0114 17:42:34.436512       1 shared_informer.go:240] Waiting for caches to sync for service config
+I0114 17:42:34.436630       1 config.go:224] Starting endpoint slice config controller
+I0114 17:42:34.436646       1 shared_informer.go:240] Waiting for caches to sync for endpoint slice config
+I0114 17:42:34.537673       1 shared_informer.go:247] Caches are synced for service config 
+I0114 17:42:34.538603       1 shared_informer.go:247] Caches are synced for endpoint slice config 
+
+* 
+* ==> kube-scheduler [012af354a805] <==
+* I0114 17:42:13.024996       1 serving.go:347] Generated self-signed cert in-memory
+W0114 17:42:16.880640       1 requestheader_controller.go:193] Unable to get configmap/extension-apiserver-authentication in kube-system.  Usually fixed by 'kubectl create rolebinding -n kube-system ROLEBINDING_NAME --role=extension-apiserver-authentication-reader --serviceaccount=YOUR_NS:YOUR_SA'
+W0114 17:42:16.880705       1 authentication.go:345] Error looking up in-cluster authentication configuration: configmaps "extension-apiserver-authentication" is forbidden: User "system:kube-scheduler" cannot get resource "configmaps" in API group "" in the namespace "kube-system"
+W0114 17:42:16.880761       1 authentication.go:346] Continuing without authentication configuration. This may treat all requests as anonymous.
+W0114 17:42:16.880783       1 authentication.go:347] To require authentication configuration lookup to succeed, set --authentication-tolerate-lookup-failure=false
+I0114 17:42:16.911276       1 configmap_cafile_content.go:201] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+I0114 17:42:16.911389       1 shared_informer.go:240] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I0114 17:42:16.911505       1 secure_serving.go:200] Serving securely on 127.0.0.1:10259
+I0114 17:42:16.911561       1 tlsconfig.go:240] "Starting DynamicServingCertificateController"
+E0114 17:42:16.918539       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.PersistentVolumeClaim: failed to list *v1.PersistentVolumeClaim: persistentvolumeclaims is forbidden: User "system:kube-scheduler" cannot list resource "persistentvolumeclaims" in API group "" at the cluster scope
+E0114 17:42:16.918667       1 reflector.go:138] k8s.io/apiserver/pkg/server/dynamiccertificates/configmap_cafile_content.go:205: Failed to watch *v1.ConfigMap: failed to list *v1.ConfigMap: configmaps "extension-apiserver-authentication" is forbidden: User "system:kube-scheduler" cannot list resource "configmaps" in API group "" in the namespace "kube-system"
+E0114 17:42:16.919870       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1beta1.CSIStorageCapacity: failed to list *v1beta1.CSIStorageCapacity: csistoragecapacities.storage.k8s.io is forbidden: User "system:kube-scheduler" cannot list resource "csistoragecapacities" in API group "storage.k8s.io" at the cluster scope
+E0114 17:42:16.920202       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.StatefulSet: failed to list *v1.StatefulSet: statefulsets.apps is forbidden: User "system:kube-scheduler" cannot list resource "statefulsets" in API group "apps" at the cluster scope
+E0114 17:42:16.920275       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.ReplicaSet: failed to list *v1.ReplicaSet: replicasets.apps is forbidden: User "system:kube-scheduler" cannot list resource "replicasets" in API group "apps" at the cluster scope
+E0114 17:42:16.920372       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.Pod: failed to list *v1.Pod: pods is forbidden: User "system:kube-scheduler" cannot list resource "pods" in API group "" at the cluster scope
+E0114 17:42:16.920480       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.Namespace: failed to list *v1.Namespace: namespaces is forbidden: User "system:kube-scheduler" cannot list resource "namespaces" in API group "" at the cluster scope
+E0114 17:42:16.920653       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.PodDisruptionBudget: failed to list *v1.PodDisruptionBudget: poddisruptionbudgets.policy is forbidden: User "system:kube-scheduler" cannot list resource "poddisruptionbudgets" in API group "policy" at the cluster scope
+E0114 17:42:16.920816       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.PersistentVolume: failed to list *v1.PersistentVolume: persistentvolumes is forbidden: User "system:kube-scheduler" cannot list resource "persistentvolumes" in API group "" at the cluster scope
+E0114 17:42:16.920934       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.CSIDriver: failed to list *v1.CSIDriver: csidrivers.storage.k8s.io is forbidden: User "system:kube-scheduler" cannot list resource "csidrivers" in API group "storage.k8s.io" at the cluster scope
+E0114 17:42:16.920964       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.Node: failed to list *v1.Node: nodes is forbidden: User "system:kube-scheduler" cannot list resource "nodes" in API group "" at the cluster scope
+E0114 17:42:16.921173       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.ReplicationController: failed to list *v1.ReplicationController: replicationcontrollers is forbidden: User "system:kube-scheduler" cannot list resource "replicationcontrollers" in API group "" at the cluster scope
+E0114 17:42:16.921205       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.CSINode: failed to list *v1.CSINode: csinodes.storage.k8s.io is forbidden: User "system:kube-scheduler" cannot list resource "csinodes" in API group "storage.k8s.io" at the cluster scope
+E0114 17:42:16.921251       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.StorageClass: failed to list *v1.StorageClass: storageclasses.storage.k8s.io is forbidden: User "system:kube-scheduler" cannot list resource "storageclasses" in API group "storage.k8s.io" at the cluster scope
+E0114 17:42:16.921255       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.Service: failed to list *v1.Service: services is forbidden: User "system:kube-scheduler" cannot list resource "services" in API group "" at the cluster scope
+E0114 17:42:17.755289       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.ReplicaSet: failed to list *v1.ReplicaSet: replicasets.apps is forbidden: User "system:kube-scheduler" cannot list resource "replicasets" in API group "apps" at the cluster scope
+E0114 17:42:17.811287       1 reflector.go:138] k8s.io/apiserver/pkg/server/dynamiccertificates/configmap_cafile_content.go:205: Failed to watch *v1.ConfigMap: failed to list *v1.ConfigMap: configmaps "extension-apiserver-authentication" is forbidden: User "system:kube-scheduler" cannot list resource "configmaps" in API group "" in the namespace "kube-system"
+E0114 17:42:17.864187       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.PersistentVolume: failed to list *v1.PersistentVolume: persistentvolumes is forbidden: User "system:kube-scheduler" cannot list resource "persistentvolumes" in API group "" at the cluster scope
+E0114 17:42:17.932359       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.PersistentVolumeClaim: failed to list *v1.PersistentVolumeClaim: persistentvolumeclaims is forbidden: User "system:kube-scheduler" cannot list resource "persistentvolumeclaims" in API group "" at the cluster scope
+E0114 17:42:17.938152       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.Service: failed to list *v1.Service: services is forbidden: User "system:kube-scheduler" cannot list resource "services" in API group "" at the cluster scope
+E0114 17:42:18.102137       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.PodDisruptionBudget: failed to list *v1.PodDisruptionBudget: poddisruptionbudgets.policy is forbidden: User "system:kube-scheduler" cannot list resource "poddisruptionbudgets" in API group "policy" at the cluster scope
+E0114 17:42:18.112416       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1beta1.CSIStorageCapacity: failed to list *v1beta1.CSIStorageCapacity: csistoragecapacities.storage.k8s.io is forbidden: User "system:kube-scheduler" cannot list resource "csistoragecapacities" in API group "storage.k8s.io" at the cluster scope
+E0114 17:42:18.120114       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.ReplicationController: failed to list *v1.ReplicationController: replicationcontrollers is forbidden: User "system:kube-scheduler" cannot list resource "replicationcontrollers" in API group "" at the cluster scope
+E0114 17:42:18.130181       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.Node: failed to list *v1.Node: nodes is forbidden: User "system:kube-scheduler" cannot list resource "nodes" in API group "" at the cluster scope
+E0114 17:42:18.219947       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.StatefulSet: failed to list *v1.StatefulSet: statefulsets.apps is forbidden: User "system:kube-scheduler" cannot list resource "statefulsets" in API group "apps" at the cluster scope
+E0114 17:42:18.221024       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.CSIDriver: failed to list *v1.CSIDriver: csidrivers.storage.k8s.io is forbidden: User "system:kube-scheduler" cannot list resource "csidrivers" in API group "storage.k8s.io" at the cluster scope
+E0114 17:42:18.256387       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.Pod: failed to list *v1.Pod: pods is forbidden: User "system:kube-scheduler" cannot list resource "pods" in API group "" at the cluster scope
+E0114 17:42:18.447976       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.Namespace: failed to list *v1.Namespace: namespaces is forbidden: User "system:kube-scheduler" cannot list resource "namespaces" in API group "" at the cluster scope
+E0114 17:42:18.464683       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.CSINode: failed to list *v1.CSINode: csinodes.storage.k8s.io is forbidden: User "system:kube-scheduler" cannot list resource "csinodes" in API group "storage.k8s.io" at the cluster scope
+E0114 17:42:18.512464       1 reflector.go:138] k8s.io/client-go/informers/factory.go:134: Failed to watch *v1.StorageClass: failed to list *v1.StorageClass: storageclasses.storage.k8s.io is forbidden: User "system:kube-scheduler" cannot list resource "storageclasses" in API group "storage.k8s.io" at the cluster scope
+I0114 17:42:19.712405       1 shared_informer.go:247] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file 
+E0114 17:42:20.190075       1 plugin.go:138] "getting namespace, assuming empty set of namespace labels" err="namespace \"kube-system\" not found" namespace="kube-system"
+E0114 17:42:20.190173       1 plugin.go:138] "getting namespace, assuming empty set of namespace labels" err="namespace \"kube-system\" not found" namespace="kube-system"
+E0114 17:42:21.183790       1 plugin.go:138] "getting namespace, assuming empty set of namespace labels" err="namespace \"kube-system\" not found" namespace="kube-system"
+E0114 17:42:21.195335       1 plugin.go:138] "getting namespace, assuming empty set of namespace labels" err="namespace \"kube-system\" not found" namespace="kube-system"
+I0115 04:56:07.099018       1 trace.go:205] Trace[1587032798]: "Scheduling" namespace:kube-system,name:metrics-server-77c99ccb96-gg79p (15-Jan-2022 04:56:06.551) (total time: 418ms):
+Trace[1587032798]: ---"Snapshotting scheduler cache and node infos done" 65ms (04:56:06.617)
+Trace[1587032798]: ---"Computing predicates done" 332ms (04:56:06.950)
+Trace[1587032798]: [418.960097ms] [418.960097ms] END
+
+* 
+* ==> kubelet <==
+* -- Logs begin at Sat 2022-01-15 04:39:52 IST, end at Sat 2022-01-15 11:18:58 IST. --
+Jan 15 11:18:46 jiowebosci1 kubelet[63699]: I0115 11:18:46.040803   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="36d9ae30c4bfe7fe8a2269f430837e0b020e261c3c5dad0a6273ccbb5eac7dfe"
+Jan 15 11:18:46 jiowebosci1 kubelet[63699]: E0115 11:18:46.318903   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39647 (39bd3001450620ff3a427cf0b2988c9964eb84e5fe558ff8e97fbdd605d4bb43): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:46 jiowebosci1 kubelet[63699]: E0115 11:18:46.319027   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39647 (39bd3001450620ff3a427cf0b2988c9964eb84e5fe558ff8e97fbdd605d4bb43): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:46 jiowebosci1 kubelet[63699]: E0115 11:18:46.319099   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39647 (39bd3001450620ff3a427cf0b2988c9964eb84e5fe558ff8e97fbdd605d4bb43): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:46 jiowebosci1 kubelet[63699]: E0115 11:18:46.319274   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39647 (39bd3001450620ff3a427cf0b2988c9964eb84e5fe558ff8e97fbdd605d4bb43): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:47 jiowebosci1 kubelet[63699]: I0115 11:18:47.107534   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="5617c82d6d1237c48cc10b9efeec07370c12341ae540b82c4d6ff86120a64966"
+Jan 15 11:18:47 jiowebosci1 kubelet[63699]: E0115 11:18:47.423141   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39648 (7777ee36e25e449a7c5217a973900ef00b86566d9d283b3c27e0738e62eeca3e): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:47 jiowebosci1 kubelet[63699]: E0115 11:18:47.423269   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39648 (7777ee36e25e449a7c5217a973900ef00b86566d9d283b3c27e0738e62eeca3e): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:47 jiowebosci1 kubelet[63699]: E0115 11:18:47.423338   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39648 (7777ee36e25e449a7c5217a973900ef00b86566d9d283b3c27e0738e62eeca3e): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:47 jiowebosci1 kubelet[63699]: E0115 11:18:47.423569   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39648 (7777ee36e25e449a7c5217a973900ef00b86566d9d283b3c27e0738e62eeca3e): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:48 jiowebosci1 kubelet[63699]: I0115 11:18:48.183243   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="ceb28909bc3f3b38b7c7f4940d3d4e49ed93fdf0c8a61115874f200cf0f2c42d"
+Jan 15 11:18:48 jiowebosci1 kubelet[63699]: E0115 11:18:48.475512   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39649 (9e6ff2bc8b15a377944b71b038059cf8d41b190a3b1c0b7092917488ccbaeea5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:48 jiowebosci1 kubelet[63699]: E0115 11:18:48.475642   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39649 (9e6ff2bc8b15a377944b71b038059cf8d41b190a3b1c0b7092917488ccbaeea5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:48 jiowebosci1 kubelet[63699]: E0115 11:18:48.475736   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39649 (9e6ff2bc8b15a377944b71b038059cf8d41b190a3b1c0b7092917488ccbaeea5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:48 jiowebosci1 kubelet[63699]: E0115 11:18:48.475919   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39649 (9e6ff2bc8b15a377944b71b038059cf8d41b190a3b1c0b7092917488ccbaeea5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:49 jiowebosci1 kubelet[63699]: I0115 11:18:49.265210   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="63552e5fd2a2033cca01ec3a344722d4166778f0c63074cc19e6379e96a31972"
+Jan 15 11:18:49 jiowebosci1 kubelet[63699]: E0115 11:18:49.570860   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39650 (7aab0c06facef02837b1273e90a236ff9ce672cd2248a6b9cb77f3be5c654602): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:49 jiowebosci1 kubelet[63699]: E0115 11:18:49.570974   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39650 (7aab0c06facef02837b1273e90a236ff9ce672cd2248a6b9cb77f3be5c654602): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:49 jiowebosci1 kubelet[63699]: E0115 11:18:49.571046   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39650 (7aab0c06facef02837b1273e90a236ff9ce672cd2248a6b9cb77f3be5c654602): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:49 jiowebosci1 kubelet[63699]: E0115 11:18:49.571195   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39650 (7aab0c06facef02837b1273e90a236ff9ce672cd2248a6b9cb77f3be5c654602): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:50 jiowebosci1 kubelet[63699]: I0115 11:18:50.340527   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="cea70350aaacf19cd6c1a38b4cd32851b4bef77d656e3579cd2be1ec9ee263ab"
+Jan 15 11:18:50 jiowebosci1 kubelet[63699]: E0115 11:18:50.638799   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39651 (cf3cad55e522e92a84a13231ee3432fde8bef1faba0471be549123e260ae5ef7): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:50 jiowebosci1 kubelet[63699]: E0115 11:18:50.638926   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39651 (cf3cad55e522e92a84a13231ee3432fde8bef1faba0471be549123e260ae5ef7): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:50 jiowebosci1 kubelet[63699]: E0115 11:18:50.638994   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39651 (cf3cad55e522e92a84a13231ee3432fde8bef1faba0471be549123e260ae5ef7): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:50 jiowebosci1 kubelet[63699]: E0115 11:18:50.639172   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39651 (cf3cad55e522e92a84a13231ee3432fde8bef1faba0471be549123e260ae5ef7): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:51 jiowebosci1 kubelet[63699]: I0115 11:18:51.424316   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="e8e55ed3715a63524061c11db111a5fbf6a8c9607a0dad038478d36f788bf459"
+Jan 15 11:18:51 jiowebosci1 kubelet[63699]: E0115 11:18:51.722096   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39652 (d3d54c62df1317a5668f30eb4315db608fbe94c94bac4048c9d17fd2490d82a4): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:51 jiowebosci1 kubelet[63699]: E0115 11:18:51.722222   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39652 (d3d54c62df1317a5668f30eb4315db608fbe94c94bac4048c9d17fd2490d82a4): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:51 jiowebosci1 kubelet[63699]: E0115 11:18:51.722291   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39652 (d3d54c62df1317a5668f30eb4315db608fbe94c94bac4048c9d17fd2490d82a4): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:51 jiowebosci1 kubelet[63699]: E0115 11:18:51.722459   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39652 (d3d54c62df1317a5668f30eb4315db608fbe94c94bac4048c9d17fd2490d82a4): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:52 jiowebosci1 kubelet[63699]: I0115 11:18:52.511846   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="63648475d87595f5ab95938f3a47aa5aad8df1a541baf04af787fe53f7f667dc"
+Jan 15 11:18:52 jiowebosci1 kubelet[63699]: E0115 11:18:52.839187   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39653 (55b2a865b820ffc1c3d40e3af7843e137ef730ba4a376630b93d19ba4ff10e5b): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:52 jiowebosci1 kubelet[63699]: E0115 11:18:52.839282   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39653 (55b2a865b820ffc1c3d40e3af7843e137ef730ba4a376630b93d19ba4ff10e5b): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:52 jiowebosci1 kubelet[63699]: E0115 11:18:52.839328   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39653 (55b2a865b820ffc1c3d40e3af7843e137ef730ba4a376630b93d19ba4ff10e5b): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:52 jiowebosci1 kubelet[63699]: E0115 11:18:52.839519   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39653 (55b2a865b820ffc1c3d40e3af7843e137ef730ba4a376630b93d19ba4ff10e5b): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:53 jiowebosci1 kubelet[63699]: I0115 11:18:53.598369   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="6766c2ced5930dfcc1451aa13710b21618831f97f5f42e9667ea1a455355f07c"
+Jan 15 11:18:53 jiowebosci1 kubelet[63699]: E0115 11:18:53.906720   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39654 (56c8b1304045e75ff8011cfe934149a10789c9e692c852a9dd4d70b20974cef2): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:53 jiowebosci1 kubelet[63699]: E0115 11:18:53.906823   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39654 (56c8b1304045e75ff8011cfe934149a10789c9e692c852a9dd4d70b20974cef2): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:53 jiowebosci1 kubelet[63699]: E0115 11:18:53.906914   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39654 (56c8b1304045e75ff8011cfe934149a10789c9e692c852a9dd4d70b20974cef2): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:53 jiowebosci1 kubelet[63699]: E0115 11:18:53.907066   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39654 (56c8b1304045e75ff8011cfe934149a10789c9e692c852a9dd4d70b20974cef2): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:54 jiowebosci1 kubelet[63699]: I0115 11:18:54.688015   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="201c4cc923e98584c4c7f8c70b10858472fda5900d9138e5f2df11b06e09f4ff"
+Jan 15 11:18:55 jiowebosci1 kubelet[63699]: E0115 11:18:55.006981   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39655 (e01b879a3085d5c0004fedf38261b176d0d5562d757fe11c7c02a1b710a4c528): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:55 jiowebosci1 kubelet[63699]: E0115 11:18:55.007121   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39655 (e01b879a3085d5c0004fedf38261b176d0d5562d757fe11c7c02a1b710a4c528): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:55 jiowebosci1 kubelet[63699]: E0115 11:18:55.007195   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39655 (e01b879a3085d5c0004fedf38261b176d0d5562d757fe11c7c02a1b710a4c528): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:55 jiowebosci1 kubelet[63699]: E0115 11:18:55.007372   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39655 (e01b879a3085d5c0004fedf38261b176d0d5562d757fe11c7c02a1b710a4c528): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:55 jiowebosci1 kubelet[63699]: I0115 11:18:55.786799   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="5051a3d8f11d3f4710db6d736ebde0903fa2d39f3a061c1b8624c4e7a349685d"
+Jan 15 11:18:56 jiowebosci1 kubelet[63699]: E0115 11:18:56.122898   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39656 (592b2d5986b6f3b82aea5d2fce2b0a082d4edd765a37e3cf9d9c736869eba11d): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:56 jiowebosci1 kubelet[63699]: E0115 11:18:56.123024   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39656 (592b2d5986b6f3b82aea5d2fce2b0a082d4edd765a37e3cf9d9c736869eba11d): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:56 jiowebosci1 kubelet[63699]: E0115 11:18:56.123102   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39656 (592b2d5986b6f3b82aea5d2fce2b0a082d4edd765a37e3cf9d9c736869eba11d): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:56 jiowebosci1 kubelet[63699]: E0115 11:18:56.123287   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39656 (592b2d5986b6f3b82aea5d2fce2b0a082d4edd765a37e3cf9d9c736869eba11d): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:56 jiowebosci1 kubelet[63699]: I0115 11:18:56.905019   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="14372411da561273c47135a857de9ffe090070be701c517974353a353c35848e"
+Jan 15 11:18:57 jiowebosci1 kubelet[63699]: E0115 11:18:57.342847   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39657 (0a2287086f33c398a79157e483029fa5b2b74370821c1b0362fe9a76f5568e31): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:57 jiowebosci1 kubelet[63699]: E0115 11:18:57.342969   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39657 (0a2287086f33c398a79157e483029fa5b2b74370821c1b0362fe9a76f5568e31): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:57 jiowebosci1 kubelet[63699]: E0115 11:18:57.343041   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39657 (0a2287086f33c398a79157e483029fa5b2b74370821c1b0362fe9a76f5568e31): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:57 jiowebosci1 kubelet[63699]: E0115 11:18:57.343214   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39657 (0a2287086f33c398a79157e483029fa5b2b74370821c1b0362fe9a76f5568e31): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+Jan 15 11:18:57 jiowebosci1 kubelet[63699]: I0115 11:18:57.971461   63699 pod_container_deletor.go:79] "Container not found in pod's containers" containerID="32272db299a67900d7bf20afd9b2d8b627c15e122b18e081fd23c58fb02dec7b"
+Jan 15 11:18:58 jiowebosci1 kubelet[63699]: E0115 11:18:58.282520   63699 remote_runtime.go:116] "RunPodSandbox from runtime service failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39658 (81af91823f935eef3059a384e4d3df25061418efb7729e53c00597321d33f4f5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use"
+Jan 15 11:18:58 jiowebosci1 kubelet[63699]: E0115 11:18:58.282622   63699 kuberuntime_sandbox.go:70] "Failed to create sandbox for pod" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39658 (81af91823f935eef3059a384e4d3df25061418efb7729e53c00597321d33f4f5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:58 jiowebosci1 kubelet[63699]: E0115 11:18:58.282683   63699 kuberuntime_manager.go:818] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to start sandbox container for pod \"ingress-nginx-controller-5f66978484-88t6t\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39658 (81af91823f935eef3059a384e4d3df25061418efb7729e53c00597321d33f4f5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t"
+Jan 15 11:18:58 jiowebosci1 kubelet[63699]: E0115 11:18:58.282825   63699 pod_workers.go:836] "Error syncing pod, skipping" err="failed to \"CreatePodSandbox\" for \"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\" with CreatePodSandboxError: \"Failed to create sandbox for pod \\\"ingress-nginx-controller-5f66978484-88t6t_ingress-nginx(391a4153-bc79-4a63-a13e-ab5408c96b2a)\\\": rpc error: code = Unknown desc = failed to start sandbox container for pod \\\"ingress-nginx-controller-5f66978484-88t6t\\\": Error response from daemon: driver failed programming external connectivity on endpoint k8s_POD_ingress-nginx-controller-5f66978484-88t6t_ingress-nginx_391a4153-bc79-4a63-a13e-ab5408c96b2a_39658 (81af91823f935eef3059a384e4d3df25061418efb7729e53c00597321d33f4f5): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use\"" pod="ingress-nginx/ingress-nginx-controller-5f66978484-88t6t" podUID=391a4153-bc79-4a63-a13e-ab5408c96b2a
+
+* 
+* ==> storage-provisioner [0b67fc5b8823] <==
+* I0114 17:42:41.110928       1 storage_provisioner.go:116] Initializing the minikube storage provisioner...
+I0114 17:42:41.140137       1 storage_provisioner.go:141] Storage provisioner initialized, now starting service!
+I0114 17:42:41.140202       1 leaderelection.go:243] attempting to acquire leader lease kube-system/k8s.io-minikube-hostpath...
+I0114 17:42:41.157311       1 leaderelection.go:253] successfully acquired lease kube-system/k8s.io-minikube-hostpath
+I0114 17:42:41.157638       1 controller.go:835] Starting provisioner controller k8s.io/minikube-hostpath_jiowebosci1_6ef6f305-0206-498d-ab32-fb0df8425a95!
+I0114 17:42:41.157653       1 event.go:282] Event(v1.ObjectReference{Kind:"Endpoints", Namespace:"kube-system", Name:"k8s.io-minikube-hostpath", UID:"c7b8007b-521d-4fe7-bd88-09b77265fc84", APIVersion:"v1", ResourceVersion:"457", FieldPath:""}): type: 'Normal' reason: 'LeaderElection' jiowebosci1_6ef6f305-0206-498d-ab32-fb0df8425a95 became leader
+I0114 17:42:41.257899       1 controller.go:884] Started provisioner controller k8s.io/minikube-hostpath_jiowebosci1_6ef6f305-0206-498d-ab32-fb0df8425a95!
+

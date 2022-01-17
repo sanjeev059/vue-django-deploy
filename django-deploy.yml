@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+  labels:
+    app: django-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django-deployment
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: django-deployment
+    spec:
+      containers:
+      - name: django-deployment
+        image: swara1214/backend_engine
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
